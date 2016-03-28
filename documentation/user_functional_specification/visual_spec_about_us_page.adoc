@@ -1,0 +1,26 @@
+:wireframes: ../wireframes
+:about_us_page_wireframe: {wireframes}/about_us_page/about_us_page_wireframe_desktop.svg
+
+
+=== About Us Page
+
+The About Us page can be accessed from the footer navigation bar or from
+a direct browser URL. The About Us page allows for all users to read crucial
+information about the marketplace (e.g. the physical location, contact e-mail
+and (perhaps) phone number). It also allows the site members to provide a
+quick Bio of themselves, so that everyone can know they are dealing with the
+best people.
+
+==== Wireframe
+
+image::{about_us_page_wireframe}[About Us Page Wireframe]
+
+For mobile devices:: The layout for the mobile device about us page
+will have the pictures scaled and placed below the text to fit a one
+column small-width presentation.
+
+==== Actionable Items
+
+The About Us page has one optional actionable item: the member can pro-
+vide a link to his blog/professional profile by providing a link in his/her
+name.

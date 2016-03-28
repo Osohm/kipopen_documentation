@@ -1,0 +1,18 @@
+== Introduction
+
+=== Purpose
+
+The purpose of this document is to specify the requirements for the
+KipOpen Application (i.e. the web application) in a simple
+and easy to understand manner.
+
+=== Scope
+
+This document is intended to be easily readable by any average or
+non-technical user.
+
+=== Reference Documents
+
+Technical design specification.
+
+//link:../technical_design_specification[Technical Design Specification]

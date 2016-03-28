@@ -1,0 +1,6 @@
+= User Functional Specification
+
+The user functional spec defines our KipOpen application features and
+requirements:
+
+link:user_functional_specification.adoc[User Functional Specification]

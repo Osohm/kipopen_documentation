@@ -1,0 +1,47 @@
+:wireframes: ../wireframes
+:search_page_wireframe: {wireframes}/search_page/search_page_wireframe_desktop.svg
+
+
+=== Search Page
+The Search page can be accessed from the home page (search button), from
+the common search button in any page and from a direct browser URL.
+
+The Search page allows for users to search for projects existent on the
+platform.
+
+* Prior to search query: It displays a list with the latest projects.
+
+* Upon search query: It provides relevant or similar results to help
+    users find interesting projects.
+
+==== Wireframe
+
+image::{search_page_wireframe}[Search Page Wireframe]
+
+For Mobile Devices:: The multi-column table will be broken into a single
+column layout (this is standard practice).
+
+==== Actionable Items
+
+The search page has the following page specific items:
+
+[qanda]
+*Search Phrase ("Search Phrase Text Box and Icon/Button")*::
+    Used can fill the form and click this button to submit the search
+    query.
+
+*Categories Tags("Categories Drop Down Menu")*::
+    Used to select the category (e.g. hardware, software, firmware ...etc)
+    to filter projects by.
+
+*Project Name ("Project Name Sort Button")*::
+    Used to sort by alphabetical order.
+
+*I-note, moreZ, openHardy, Tus Botas ... ("Project Name hyperlink")*::
+    Used to go to the respective project page.
+
+*Category Tags ("Category Tags Sort Button")*::
+    Used to sort by alphabetical order.
+
+*Status ("Status Sort Button")*::
+    Used to sort projects by their current development status.

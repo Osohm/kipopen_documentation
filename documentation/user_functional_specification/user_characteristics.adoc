@@ -1,0 +1,35 @@
+== User Characteristics
+
+The platform has three main kinds of users and there is a lot of 
+overlap:
+
+=== Platform Administrator/Host
+
+The platform administrator is the individual that downloads the web 
+application and installs it in its own ''average'' computer (e.g. 
+it can be a spare low power net-book, or it can be an old server, a 
+single board computer, a Game Boy - not really ...etc.). This person 
+then is in charge of maintaining his local marketplace application 
+(i.e. hosting the site) so that other users (i.e. the developers 
+and the investors) can use the marketplace to trade. In return for 
+his services the administrator is free to charge a commission 
+for every project funded.
+
+=== Technical Developers
+
+The technical developer goes to the platform because he has an 
+interesting idea (the next open iphone ... ok don’t laugh). He would 
+like to receive capital to open his design, fund the development and 
+make a return. Developers can also go to the platform to join the 
+design team of a project for a financial return.
+
+=== Informed Investors (aka Informed Consumers)
+
+The _informed_ consumer (note the emphasis on the word informed, 
+this is not your typical “fashionable techie” consumer) goes to the 
+platform with a clear technology need (e.g. an accounting suite 
+or a new computer ...etc). He browses the site, purchases 
+shares in relevant projects, proposes changes (add/remove features, 
+finances or return incentives), votes on proposals and receives his 
+return (e.g. his accounting software, computer hardware, technical support 
+... etc).

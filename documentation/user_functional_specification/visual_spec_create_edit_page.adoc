@@ -1,0 +1,110 @@
+:wireframes: ../wireframes
+:create_edit_page_wireframe: {wireframes}/create_edit_page/create_edit_page_wireframe_desktop.svg
+
+
+=== Create/Edit Page
+The create page can be accessed directly from the home page (create
+button), from the common create button in the navigation bar or from
+a direct browser URL.
+
+It allows users (developers and consumers) to create projects, by
+filling in or updating all of the required information for any project.
+
+NOTE: The content of this page is only displayed to logged-in users, other
+users are redirected to the login page and displayed a page message.
+
+==== Wireframe
+
+image::{create_edit_page_wireframe}[Create/Edit Page Wireframe]
+
+For Mobile Devices:: The multi-column layout of the buttons at the
+bottom of the screen will be broken up into a single column layout
+(this is pretty standard).
+
+==== Actionable Items
+The Edit Project sections are all collapsible and can be expanded by
+the user clicking on each section. Only one section will be expanded at
+a time.
+
+The Create/Edit page has the following collapsible sections:
+
+[qanda]
+*Project Basics ("Project Basics Collapsible Section")*::
+The project basics collapsible section will have the following fillable
+forms:
+
+    * Project Name (Form): Choose something meaningful (e.g. HumanClone).
+    * Project Logo- Optional (Input field): Choose an .svg from your
+        computer.
+    * Project One Liner (Form): Short and descriptive (e.g. One device, lots of humans)
+    * Project Category (Choose Tags): Hardware, Firmware, Software, Manufacturing, Research ...etc.
+    * Description (Form): One paragraph description (e.g. We are building
+        hardware that will make cloning possible in every household ...)
+    * Licenses (Drop Down Menu): Choose a License (e.g. GPLv3, MIT ...etc).
+    * Primary Contact (Form): Initially pre-populated field, can select other
+        registered marketplace users (e.g. to transfer ownership).
+    * Location (Form): Physical location of project. City and country
+        available to public, address available to investors after funding.
+
+*Features and Requirements ("Features and Requirements Collapsible Section")*::
+This will be the user requirements document or functional spec doc.
+
+    * User Documentation (one or more URL entry fields).
+
+*Technical Team ("Technical Team Collapsible Section")*::
+This section will allow the owner of the project to add registered
+team members to the project.
+
+    * Project Owner display field (can not edit)
+    * Technical Team Names (text entry field)
+    * Add more members (button).
+
+*Technical Documentation ("Technical Documentation Collapsible Section")*::
+This will be the design specification: Starts as technical specifications
+and as the project evolves this will become a technical design document.
+
+    * Technical Documentation (one or more URL entry field).
+
+*Financial Plan ("Financial Plan Collapsible Section")*::
+The financial plan deals with costs, shares allocation, voting
+(1 share entitles you to voting participation, more shares, more
+voting power) and returns (hardware, levels of support, length of
+maintenance ...etc)
+
+    * Costs breakdown (form).
+    * Issue shares and price per share (form).
+    * Return packages (form).
+
+*User Manual ("User Manual Collapsible Section")*::
+This section will allow the owner of the project to publish a user
+manual/tutorial wiki for the public to use and edit.
+
+    * User Manual Wiki (URL entry field).
+
+*Public Message ("Public Message Entry Field")*::
+The owner can use this form to provide short public updates about the
+project (they will show up in the search results.)
+
+*Save Project ("Save Project Button")*::
+The owner can use this button to update the project information.
+
+*Preview Page ("Preview Page Button)*::
+The owner can use this button to preview the project changes he/she made.
+
+*Preview Page ("Open to the Pubic Button)*::
+This button is dynamic. Depending on the current status of the project
+it can have the following values.
+
+    * Open to the public: Anyone can see the project page (this is normally
+        done after filling the features and requirements section).
+    * Launch for investment: This button becomes available after the project
+        is public and the team, technical documentation and financial plan
+        sections are completed.
+    * Finish Project: This is normally done after a user manual has been
+        published.
+
+NOTE: The collapsible sections will be implemented with simple
+html/css static functionality.
+
+NOTE: Every section will have instructions to guide the project creator
+incentivize good design principles and streamline the process.
