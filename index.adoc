@@ -1,0 +1,8 @@
+= KipOpen Application
+:user_functional_specification: documentation/user_functional_specification/user_functional_specification.html
+
+_The open technology marketplace application that anyone can download._
+
+*Index of Resources:*
+
+* link:{user_functional_specification}[User Functional Specification]
