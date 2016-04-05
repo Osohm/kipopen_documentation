@@ -1,8 +1,24 @@
 = KipOpen Application
+Camilo Tejeiro  <camilo.tejeiro@gmail.com>
+:Date:          {docdate}
+:Revision:      0.1
+:toc:
+:sectnums:
+
 :user_functional_specification: documentation/user_functional_specification/user_functional_specification.html
+:shared_sections: documentation/shared_sections
+:project_mission: {shared_sections}/project_mission.adoc
+:web_application_description: {shared_sections}/web_application_description.adoc
+:competitive_advantage: {shared_sections}/competitive_advantage.adoc
 
-_The open technology marketplace application that anyone can download._
+_A community investment platform for open technology_
 
-*Index of Resources:*
+== Our Mission
+include::{project_mission}[]
+
+== The KipOpen Web Application
+include::{web_application_description}[]
+
+== Supporting Documentation
 
 * link:{user_functional_specification}[User Functional Specification]
