@@ -46,13 +46,8 @@ marketplace search results and share user registration credentials (so
 that users don't need to login multiple times).
 
 NOTE: This is a completely decentralized model (as opposed to
-the large centralized crowd-sourcing sites). Widespread adoption relies
-not on large advertising campaigns but on the correct economic
-strategy to incentivize people to host marketplaces and consumers
-to trade on them.
-
-NOTE: Widespread adoption relies
-not on large advertising campaigns but on the correct economic
+the large centralized crowd-sourcing sites). Thus, widespread adoption
+relies not on large advertising campaigns but on the correct economic
 strategy to incentivize people to host marketplaces and consumers
 to trade on them.
 
