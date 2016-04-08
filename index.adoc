@@ -11,7 +11,7 @@ Camilo Tejeiro  <camilo.tejeiro@gmail.com>
 :web_application_description: {shared_sections}/web_application_description.adoc
 :competitive_advantage: {shared_sections}/competitive_advantage.adoc
 
-_A community investment platform for open technology_
+_A decentralized community investment platform for open technology_
 
 == Our Mission
 include::{project_mission}[]
