@@ -16,7 +16,7 @@ supports all major ones, ultimately this is something that developers
 should discuss with their investors.
 
 IMPORTANT: This document *must not* be dry and boring.
-Keep this document entertaining (e.g. use humour) so that
+Keep this document entertaining (e.g. use humor) so that
 people actually want to read it and it gets maintained, otherwise this
 document will be useless.
 
