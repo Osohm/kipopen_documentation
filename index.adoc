@@ -5,8 +5,8 @@ Camilo Tejeiro  <camilo.tejeiro@gmail.com>
 :toc:
 :sectnums:
 
-:user_functional_specification: documentation/user_functional_specification/user_functional_specification.html
-:shared_sections: documentation/shared_sections
+:user_functional_specification: user_documentation/user_functional_specification/user_functional_specification.html
+:shared_sections: user_documentation/shared_sections
 :project_mission: {shared_sections}/project_mission.adoc
 :web_application_description: {shared_sections}/web_application_description.adoc
 :competitive_advantage: {shared_sections}/competitive_advantage.adoc

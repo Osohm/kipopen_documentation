@@ -1,7 +1,7 @@
 = User Functional Specification
-Camilo Tejeiro  <camilo.tejeiro@gmail.com>
-:Date:          {docdate}
-:Revision:      0.1
+The KipOpen Team    <camilo.tejeiro@gmail.com>
+:Date:              {docdate}
+:Revision:          0.1
 :toc:
 :sectnums:
 

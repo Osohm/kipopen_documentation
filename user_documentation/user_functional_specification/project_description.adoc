@@ -3,7 +3,7 @@
 :web_application_description: {shared_sections}/web_application_description.adoc
 :competitive_advantage: {shared_sections}/competitive_advantage.adoc
 
-== Project Overview
+== Project Description
 
 === Our Mission
 include::{project_mission}[]
