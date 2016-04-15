@@ -3,12 +3,12 @@
 :web_application_description: {shared_sections}/web_application_description.adoc
 :competitive_advantage: {shared_sections}/competitive_advantage.adoc
 
-== Project Description
+== Project Overview
 
 === Our Mission
 include::{project_mission}[]
 
-=== The KipOpen Web Application
+=== The Web Application
 include::{web_application_description}[]
 
 === Competitive Advantage Over Closed/Proprietary Technology

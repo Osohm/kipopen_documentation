@@ -35,6 +35,9 @@ include::operational_environment.adoc[]
 // Use Cases
 include::use_cases.adoc[]
 
+// Features and Requirements
+include::features_requirements.adoc[]
+
 // Postponed/Removed Features
 include::postponed_removed_features.adoc[]
 

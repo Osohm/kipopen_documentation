@@ -1,5 +1,5 @@
-= KipOpen Application
-Camilo Tejeiro  <camilo.tejeiro@gmail.com>
+= KipOpen
+The KipOpen Team  <camilo.tejeiro@gmail.com>
 :Date:          {docdate}
 :Revision:      0.1
 :toc:
@@ -9,16 +9,13 @@ Camilo Tejeiro  <camilo.tejeiro@gmail.com>
 :shared_sections: user_documentation/shared_sections
 :project_mission: {shared_sections}/project_mission.adoc
 :web_application_description: {shared_sections}/web_application_description.adoc
-:competitive_advantage: {shared_sections}/competitive_advantage.adoc
 
 _A decentralized community investment platform for open technology_
 
-== Our Mission
-include::{project_mission}[]
-
-== The KipOpen Web Application
+== The Web Application
 include::{web_application_description}[]
 
 == Supporting Documentation
 
 * link:{user_functional_specification}[User Functional Specification]
+* Technical Design Specification (TBD)
