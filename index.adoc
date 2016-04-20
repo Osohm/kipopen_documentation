@@ -9,10 +9,16 @@ The KipOpen Team  <camilo.tejeiro@gmail.com>
 :shared_sections: user_documentation/shared_sections
 :project_mission: {shared_sections}/project_mission.adoc
 :web_application_description: {shared_sections}/web_application_description.adoc
+:the_problem: {shared_sections}/the_problem.adoc
 
 _A decentralized community investment platform for open technology_
 
+== The Problem We Are Solving
+
+include::{the_problem}[]
+
 == The Web Application
+
 include::{web_application_description}[]
 
 == Supporting Documentation

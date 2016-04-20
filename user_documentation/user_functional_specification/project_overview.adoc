@@ -2,14 +2,15 @@
 :project_mission: {shared_sections}/project_mission.adoc
 :web_application_description: {shared_sections}/web_application_description.adoc
 :competitive_advantage: {shared_sections}/competitive_advantage.adoc
+:the_problem: {shared_sections}/the_problem.adoc
 
 == Project Overview
+
+=== The problem
+include::{the_problem}[]
 
 === Our Mission
 include::{project_mission}[]
 
 === The Web Application
 include::{web_application_description}[]
-
-=== Competitive Advantage Over Closed/Proprietary Technology
-include::{competitive_advantage}[]

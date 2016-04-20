@@ -11,9 +11,9 @@ forward, this document will take shape and assume a more polished look.
 
 NOTE: When we refer to "open technology", we don't mean a specific
 movement/license in general (e.g. libre software vs open source ...etc).
-There are pros and cons to each open/libre license and our platform
-supports all major ones, ultimately this is something that developers
-should discuss with their investors.
+
+NOTE: In this document we are using the words "community investment platform",
+"crowd-funding site" and "marketplace" interchangeably.
 
 IMPORTANT: This document *must not* be dry and boring.
 Keep this document entertaining (e.g. use humor) so that

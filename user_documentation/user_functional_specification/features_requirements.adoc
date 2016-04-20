@@ -9,8 +9,8 @@ later):
     development).
 * Project creation guidance (user docs, tech docs, team selection,
     financial plan, user manual wiki ... etc.)
+* Project Search functionality (local and remote search results).
 * Project messaging board.
-* Project Search page.
 * Project ownership, rewards and voting rights.
 * Peer to peer communication between marketplace sites (to facilitate
     single user registration, global project's search ...etc).

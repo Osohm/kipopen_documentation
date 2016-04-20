@@ -1,35 +1,54 @@
 == User Characteristics
 
-The platform has three main kinds of users and there is a lot of 
+The platform has three main kinds of users and there is a lot of
 overlap:
 
 === Platform Administrator/Host
 
-The platform administrator is the individual that downloads the web 
-application and installs it in its own ''average'' computer (e.g. 
-it can be a spare low power net-book, or it can be an old server, a 
-single board computer, a Game Boy - not really ...etc.). This person 
-then is in charge of maintaining his local marketplace application 
-(i.e. hosting the site) so that other users (i.e. the developers 
-and the investors) can use the marketplace to trade. In return for 
-his services the administrator is free to charge a commission 
+The platform administrator is the individual that downloads the web
+application and installs it in its own ''average'' computer (e.g.
+it can be a spare low power net-book, or it can be an old server, a
+single board computer, a Game Boy - not really ...etc.). This person
+then is in charge of maintaining his local marketplace application
+(i.e. hosting the site) so that other users (i.e. the developers
+and the investors) can use the marketplace to trade. In return for
+his services the administrator is free to charge a commission
 for every project funded.
+
+Administrators receive a commission for every project funded on their
+marketplace (this is pretty standard). This is the incentive they have
+to actually install the web application and host the site in their
+computing device.
 
 === Technical Developers
 
-The technical developer goes to the platform because he has an 
-interesting idea (the next open iphone ... ok don’t laugh). He would 
-like to receive capital to open his design, fund the development and 
-make a return. Developers can also go to the platform to join the 
+The technical developer goes to the platform because he has an
+interesting idea (the next open iphone ... ok don’t laugh). He would
+like to receive capital to open his design, fund the development and
+make a return. Developers can also go to the platform to join the
 design team of a project for a financial return.
+
+Developers can trade directly with consumers and can now earn money
+from developing open applications. This means that current open
+technology developers now have a choice of working on open designs
+on a full-time basis, furthermore it also means that entrepreneurs
+can start their own company to design complete open products to
+meet the marketplace demand.
 
 === Informed Investors (aka Informed Consumers)
 
-The _informed_ consumer (note the emphasis on the word informed, 
-this is not your typical “fashionable techie” consumer) goes to the 
-platform with a clear technology need (e.g. an accounting suite 
-or a new computer ...etc). He browses the site, purchases 
-shares in relevant projects, proposes changes (add/remove features, 
-finances or return incentives), votes on proposals and receives his 
-return (e.g. his accounting software, computer hardware, technical support 
+The _informed_ consumer (note the emphasis on the word informed,
+this is not your typical “fashionable techie” consumer) goes to the
+platform with a clear technology need (e.g. an accounting suite
+or a new computer ...etc). He browses the site, purchases
+shares in relevant projects, proposes changes (add/remove features,
+finances or return incentives), votes on proposals and receives his
+return (e.g. his accounting software, computer hardware, technical support
 ... etc).
+
+Informed consumers trade directly with developers and can purchase open
+goods for a fraction of the cost (i.e. there is no corporate, marketing
+or other unnecessary business overhead). By purchasing shares they
+also have the right to vote on the features they want and the level
+of support they need. Consumers are incentivized to invest in open
+technology simply because they get better value.

@@ -2,8 +2,7 @@ Our mission is to provide a viable economic path for
 the design and commercialization of open technologies.
 
 Our overall aim is to shift the current economics of the
-system (largely based on aggregate donations and corporate
-sponsorships) to a demand-sided model by directly connecting
+system to a demand-sided model by directly connecting
 informed consumers with technical developers.
 
 _Given the right economics, we see a future where
