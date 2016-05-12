@@ -1,16 +1,29 @@
-The lack of sustainable sources of capital for open projects and open
-intellectual property (IP) in general. i.e. most open projects are largely
-funded by aggregate donations and/or corporate sponsorships; this is
-not sustainable in the long term.
+*The lack of sustainable sources of capital for open projects and Open
+Intellectual Property (https://osohm.org/faq/#what-is-open-intellectual-property[OIP])
+in general.*
 
-NOTE: While the collaborative development model of open projects can be
-sound, the economics of the system are very weak.
+_While the collaborative development model of open projects can be
+sound, the economics of the system are weak. Today most open projects
+are largely funded by aggregate donations and/or corporate
+sponsorships; this is not sustainable in the long term._
 
+____
 For widespread adoption of open technology in the consumer market
 (not only in niche markets): informed consumers must understand the
 value (and the cost) of open technology and engineers and developers
 must make a living.
+____
 
-The KipOpen project aims to provide a solution to this problem:
-a decentralized crowd-sourcing platform for funding the development of
-open products (every stage of the design cycle) by informed consumers.
+The goal of the KipOpen project is to find alternative funding models
+that do not rely on donations but on tangible returns for consumers
+that can be used as incentives for them to invest on open technology.
+
+*We don't claim to have a solution that solves the funding problem for
+every sector of technology; this would be naive.* The funding problem
+looks different for every sector and must be tackled by passionate
+individuals specializing in those sectors (e.g. it would be futile for
+a hardware engineer to expect to solve the problem for open academic
+research).
+
+KipOpen is simply a tool that incentivizes individuals from different
+technology sectors to find appropriate solutions.

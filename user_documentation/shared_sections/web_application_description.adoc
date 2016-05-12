@@ -1,16 +1,18 @@
 KipOpen is a web application that anyone can download and install in
-their own computer to host an open marketplace (aka community
-investment/crowdfunding site). The application comes with the
-minimal core functionality required to launch the marketplace (in
-small computing devices) and it has a pluggable architecture
-to support the addition of extra functionality (e.g. Bitcoin payments
-plugin, Facebook/Twitter integration plugin ...etc) if needed.
+their own computer to host a crowdfunding site.
 
-Peer to peer Communication is essential among all the KipOpen
-applications and it allows every marketplace to share
-project/developers reviews, user information (so that users don't have
-to login multiple times) and projects' information (so that users can
-search for any project in the network easily).
+Each individual crowdfunding site is part of a decentralized network
+where peer to peer communication and a distributed database allows
+every marketplace to share project/developers reviews, user credentials
+(so that users don't have to login multiple times) and projects'
+information (so that users can search for any project in the network
+easily).
+
+The application comes with the minimal core functionality required to
+operate in small computing devices and it has a pluggable architecture
+to support the addition of extra functionality (e.g. Bitcoin payments
+plugin, Facebook/Twitter integration plugin, French Language plugin,
+research crowdfunding plugin, hardware crowdfunding plugin ...etc).
 
 Each marketplace application hosts open technology projects and these
 generate a profit for the developer(s), a commission for the site's
@@ -19,9 +21,12 @@ community (an economically viable alternative for all parties).
 
 The long-term goal of the KipOpen application is to provide a completely
 open alternative path for the design and development of consumer
-products. The general plan is to support every stage of the design
-cycle and subsequent manufacturing/production cycles, these stages
-define our project categories and include:
+products. *KipOpen incentivizes individual players (potentially from different
+countries) specializing in different market sectors to host
+crowdfunding sites specially tailored towards the problem of
+funding of open technologies in those sectors*.
+For example in a long-term future we would expect crowdfunding sites in
+multiple regions and languages specializing in:
 
 * Technology Research.
 * Hardware Design.
@@ -29,9 +34,9 @@ define our project categories and include:
 * Mechanical Design.
 * Industrial Design.
 * Software Development.
-* Manufacturing and Retailing (pre-order based).
+* Manufacturing and Retailing.
 
-Through the use of a community investment platform designed solely for
+Through the use of an investment platform designed solely for
 the development of open technology products, we aim to incentivize the
 use of public capital (i.e. from pools of informed consumers) to fund
 every stage of the design cycle. This is in contrast to the use of

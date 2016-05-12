@@ -11,9 +11,9 @@ The KipOpen Team  <camilo.tejeiro@gmail.com>
 :web_application_description: {shared_sections}/web_application_description.adoc
 :the_problem: {shared_sections}/the_problem.adoc
 
-_A decentralized community investment platform for open technology_
+_A decentralized investment platform for open technology_
 
-== The Problem We Are Solving
+== The Problem
 
 include::{the_problem}[]
 
