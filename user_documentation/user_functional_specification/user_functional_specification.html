@@ -1,433 +1,394 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="Asciidoctor 0.1.4">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Functional Specification</title>
-<style>
-/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
-audio, canvas, video { display: inline-block; }
-audio:not([controls]) { display: none; height: 0; }
-[hidden] { display: none; }
-html { background: #fff; color: #000; font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
-body { margin: 0; }
-a:focus { outline: thin dotted; }
-a:active, a:hover { outline: 0; }
-h1 { font-size: 2em; margin: 0.67em 0; }
-abbr[title] { border-bottom: 1px dotted; }
-b, strong { font-weight: bold; }
-dfn { font-style: italic; }
-hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
-mark { background: #ff0; color: #000; }
-code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
-pre { white-space: pre-wrap; }
-q { quotes: "\201C" "\201D" "\2018" "\2019"; }
-small { font-size: 80%; }
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-img { border: 0; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 0; }
-fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
-legend { border: 0; padding: 0; }
-button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
-button, input { line-height: normal; }
-button, select { text-transform: none; }
-button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
-button[disabled], html input[disabled] { cursor: default; }
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-textarea { overflow: auto; vertical-align: top; }
-table { border-collapse: collapse; border-spacing: 0; }
-*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-html, body { font-size: 100%; }
-body { background: white; color: #222222; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
-a:hover { cursor: pointer; }
-a:focus { outline: none; }
-img, object, embed { max-width: 100%; height: auto; }
-object, embed { height: 100%; }
-img { -ms-interpolation-mode: bicubic; }
-#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object { max-width: none !important; }
-.left { float: left !important; }
-.right { float: right !important; }
-.text-left { text-align: left !important; }
-.text-right { text-align: right !important; }
-.text-center { text-align: center !important; }
-.text-justify { text-align: justify !important; }
-.hide { display: none; }
-.antialiased, body { -webkit-font-smoothing: antialiased; }
-img { display: inline-block; vertical-align: middle; }
-textarea { height: auto; min-height: 50px; }
-select { width: 100%; }
-p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
-.subheader, #content #toctitle, .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, .tableblock > caption { line-height: 1.4; color: #7a2518; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
-a { color: #005498; text-decoration: underline; line-height: inherit; }
-a:hover, a:focus { color: #00467f; }
-a img { border: none; }
-p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; text-rendering: optimizeLegibility; }
-p aside { font-size: 0.875em; line-height: 1.35; font-style: italic; }
-h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: Georgia, "URW Bookman L", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; color: #ba3925; text-rendering: optimizeLegibility; margin-top: 1em; margin-bottom: 0.5em; line-height: 1.2125em; }
-h1 small, h2 small, h3 small, #toctitle small, .sidebarblock > .content > .title small, h4 small, h5 small, h6 small { font-size: 60%; color: #e99b8f; line-height: 0; }
-h1 { font-size: 2.125em; }
-h2 { font-size: 1.6875em; }
-h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.375em; }
-h4 { font-size: 1.125em; }
-h5 { font-size: 1.125em; }
-h6 { font-size: 1em; }
-hr { border: solid #dddddd; border-width: 1px 0 0; clear: both; margin: 1.25em 0 1.1875em; height: 0; }
-em, i { font-style: italic; line-height: inherit; }
-strong, b { font-weight: bold; line-height: inherit; }
-small { font-size: 60%; line-height: inherit; }
-code { font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; color: #6d180b; }
-ul, ol, dl { font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; list-style-position: outside; font-family: inherit; }
-ul, ol { margin-left: 1.5em; }
-ul li ul, ul li ol { margin-left: 1.25em; margin-bottom: 0; font-size: 1em; }
-ul.square li ul, ul.circle li ul, ul.disc li ul { list-style: inherit; }
-ul.square { list-style-type: square; }
-ul.circle { list-style-type: circle; }
-ul.disc { list-style-type: disc; }
-ul.no-bullet { list-style: none; }
-ol li ul, ol li ol { margin-left: 1.25em; margin-bottom: 0; }
-dl dt { margin-bottom: 0.3125em; font-weight: bold; }
-dl dd { margin-bottom: 1.25em; }
-abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222222; border-bottom: 1px dotted #dddddd; cursor: help; }
-abbr { text-transform: none; }
-blockquote { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
-blockquote cite { display: block; font-size: inherit; color: #555555; }
-blockquote cite:before { content: "\2014 \0020"; }
-blockquote cite a, blockquote cite a:visited { color: #555555; }
-blockquote, blockquote p { line-height: 1.6; color: #6f6f6f; }
-.vcard { display: inline-block; margin: 0 0 1.25em 0; border: 1px solid #dddddd; padding: 0.625em 0.75em; }
-.vcard li { margin: 0; display: block; }
-.vcard .fn { font-weight: bold; font-size: 0.9375em; }
-.vevent .summary { font-weight: bold; }
-.vevent abbr { cursor: auto; text-decoration: none; font-weight: bold; border: none; padding: 0 0.0625em; }
-@media only screen and (min-width: 768px) { h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { line-height: 1.4; }
-  h1 { font-size: 2.75em; }
-  h2 { font-size: 2.3125em; }
-  h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.6875em; }
-  h4 { font-size: 1.4375em; } }
-.print-only { display: none !important; }
-@media print { * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; }
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3, #toctitle, .sidebarblock > .content > .title { orphans: 3; widows: 3; }
-  h2, h3, #toctitle, .sidebarblock > .content > .title { page-break-after: avoid; }
-  .hide-on-print { display: none !important; }
-  .print-only { display: block !important; }
-  .hide-for-print { display: none !important; }
-  .show-for-print { display: inherit !important; } }
-table { background: white; margin-bottom: 1.25em; border: solid 1px #dddddd; }
-table thead, table tfoot { background: whitesmoke; font-weight: bold; }
-table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: #222222; text-align: left; }
-table tr th, table tr td { padding: 0.5625em 0.625em; font-size: inherit; color: #222222; }
-table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #f9f9f9; }
-table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td { display: table-cell; line-height: 1.6; }
-.clearfix:before, .clearfix:after, .float-group:before, .float-group:after { content: " "; display: table; }
-.clearfix:after, .float-group:after { clear: both; }
-*:not(pre) > code { font-size: 0.9375em; padding: 1px 3px 0; white-space: nowrap; background-color: #f2f2f2; border: 1px solid #cccccc; -webkit-border-radius: 4px; border-radius: 4px; text-shadow: none; }
-pre, pre > code { line-height: 1.4; color: inherit; font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; }
-kbd.keyseq { color: #555555; }
-kbd:not(.keyseq) { display: inline-block; color: #222222; font-size: 0.75em; line-height: 1.4; background-color: #F7F7F7; border: 1px solid #ccc; -webkit-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; margin: -0.15em 0.15em 0 0.15em; padding: 0.2em 0.6em 0.2em 0.5em; vertical-align: middle; white-space: nowrap; }
-kbd kbd:first-child { margin-left: 0; }
-kbd kbd:last-child { margin-right: 0; }
-.menuseq, .menu { color: #090909; }
-p a > code:hover { color: #561309; }
-#header, #content, #footnotes, #footer { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; position: relative; padding-left: 0.9375em; padding-right: 0.9375em; }
-#header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after { content: " "; display: table; }
-#header:after, #content:after, #footnotes:after, #footer:after { clear: both; }
-#header { margin-bottom: 2.5em; }
-#header > h1 { color: black; font-weight: normal; border-bottom: 1px solid #dddddd; margin-bottom: -28px; padding-bottom: 32px; }
-#header span { color: #6f6f6f; }
-#header #revnumber { text-transform: capitalize; }
-#header br { display: none; }
-#header br + span { padding-left: 3px; }
-#header br + span:before { content: "\2013 \0020"; }
-#header br + span.author { padding-left: 0; }
-#header br + span.author:before { content: ", "; }
-#toc { border-bottom: 3px double #ebebeb; padding-bottom: 1.25em; }
-#toc > ul { margin-left: 0.25em; }
-#toc ul.sectlevel0 > li > a { font-style: italic; }
-#toc ul.sectlevel0 ul.sectlevel1 { margin-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
-#toc ul { list-style-type: none; }
-#toctitle { color: #7a2518; }
-@media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; }
-  #toc.toc2 { position: fixed; width: 20em; left: 0; top: 0; border-right: 1px solid #ebebeb; border-bottom: 0; z-index: 1000; padding: 1em; height: 100%; overflow: auto; }
-  #toc.toc2 #toctitle { margin-top: 0; }
-  #toc.toc2 > ul { font-size: .95em; }
-  #toc.toc2 ul ul { margin-left: 0; padding-left: 1.25em; }
-  #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
-  body.toc2.toc-right { padding-left: 0; padding-right: 20em; }
-  body.toc2.toc-right #toc.toc2 { border-right: 0; border-left: 1px solid #ebebeb; left: auto; right: 0; } }
-#content #toc { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; border-width: 0; -webkit-border-radius: 4px; border-radius: 4px; }
-#content #toc > :first-child { margin-top: 0; }
-#content #toc > :last-child { margin-bottom: 0; }
-#content #toc a { text-decoration: none; }
-#content #toctitle { font-weight: bold; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 1em; padding-left: 0.125em; }
-#footer { max-width: 100%; background-color: #222222; padding: 1.25em; }
-#footer-text { color: #dddddd; line-height: 1.44; }
-.sect1 { padding-bottom: 1.25em; }
-.sect1 + .sect1 { border-top: 3px double #ebebeb; }
-#content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor { position: absolute; width: 1em; margin-left: -1em; display: block; text-decoration: none; visibility: hidden; text-align: center; font-weight: normal; }
-#content h1 > a.anchor:before, h2 > a.anchor:before, h3 > a.anchor:before, #toctitle > a.anchor:before, .sidebarblock > .content > .title > a.anchor:before, h4 > a.anchor:before, h5 > a.anchor:before, h6 > a.anchor:before { content: '\00A7'; font-size: .85em; vertical-align: text-top; display: block; margin-top: 0.05em; }
-#content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover { visibility: visible; }
-#content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link { color: #ba3925; text-decoration: none; }
-#content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover { color: #a53221; }
-.imageblock, .literalblock, .listingblock, .verseblock, .videoblock { margin-bottom: 1.25em; }
-.admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .videoblock > .title, .listingblock > .title, .literalblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
-.tableblock > caption { text-align: left; font-weight: bold; white-space: nowrap; overflow: visible; max-width: 0; }
-table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
-.admonitionblock > table { border: 0; background: none; width: 100%; }
-.admonitionblock > table td.icon { text-align: center; width: 80px; }
-.admonitionblock > table td.icon img { max-width: none; }
-.admonitionblock > table td.icon .title { font-weight: bold; text-transform: uppercase; }
-.admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #dddddd; color: #6f6f6f; }
-.admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
-.exampleblock > .content { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: white; -webkit-border-radius: 4px; border-radius: 4px; }
-.exampleblock > .content > :first-child { margin-top: 0; }
-.exampleblock > .content > :last-child { margin-bottom: 0; }
-.exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6, .exampleblock > .content p { color: #333333; }
-.exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6 { line-height: 1; margin-bottom: 0.625em; }
-.exampleblock > .content h1.subheader, .exampleblock > .content h2.subheader, .exampleblock > .content h3.subheader, .exampleblock > .content .subheader#toctitle, .sidebarblock.exampleblock > .content > .subheader.title, .exampleblock > .content h4.subheader, .exampleblock > .content h5.subheader, .exampleblock > .content h6.subheader { line-height: 1.4; }
-.exampleblock.result > .content { -webkit-box-shadow: 0 1px 8px #d9d9d9; box-shadow: 0 1px 8px #d9d9d9; }
-.sidebarblock { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; -webkit-border-radius: 4px; border-radius: 4px; }
-.sidebarblock > :first-child { margin-top: 0; }
-.sidebarblock > :last-child { margin-bottom: 0; }
-.sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6, .sidebarblock p { color: #333333; }
-.sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6 { line-height: 1; margin-bottom: 0.625em; }
-.sidebarblock h1.subheader, .sidebarblock h2.subheader, .sidebarblock h3.subheader, .sidebarblock .subheader#toctitle, .sidebarblock > .content > .subheader.title, .sidebarblock h4.subheader, .sidebarblock h5.subheader, .sidebarblock h6.subheader { line-height: 1.4; }
-.sidebarblock > .content > .title { color: #7a2518; margin-top: 0; line-height: 1.6; }
-.exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
-.literalblock > .content pre, .listingblock > .content pre { background: none; border-width: 1px 0; border-style: dotted; border-color: #bfbfbf; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.75em 0.75em 0.5em 0.75em; word-wrap: break-word; }
-.literalblock > .content pre.nowrap, .listingblock > .content pre.nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
-.literalblock > .content pre > code, .listingblock > .content pre > code { display: block; }
-@media only screen { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.8em; } }
-@media only screen and (min-width: 768px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 0.9em; } }
-@media only screen and (min-width: 1280px) { .literalblock > .content pre, .listingblock > .content pre { font-size: 1em; } }
-.listingblock > .content { position: relative; }
-.listingblock:hover code[class*=" language-"]:before { text-transform: uppercase; font-size: 0.9em; color: #999; position: absolute; top: 0.375em; right: 0.375em; }
-.listingblock:hover code.asciidoc:before { content: "asciidoc"; }
-.listingblock:hover code.clojure:before { content: "clojure"; }
-.listingblock:hover code.css:before { content: "css"; }
-.listingblock:hover code.groovy:before { content: "groovy"; }
-.listingblock:hover code.html:before { content: "html"; }
-.listingblock:hover code.java:before { content: "java"; }
-.listingblock:hover code.javascript:before { content: "javascript"; }
-.listingblock:hover code.python:before { content: "python"; }
-.listingblock:hover code.ruby:before { content: "ruby"; }
-.listingblock:hover code.scss:before { content: "scss"; }
-.listingblock:hover code.xml:before { content: "xml"; }
-.listingblock:hover code.yaml:before { content: "yaml"; }
-.listingblock.terminal pre .command:before { content: attr(data-prompt); padding-right: 0.5em; color: #999; }
-.listingblock.terminal pre .command:not([data-prompt]):before { content: '$'; }
-table.pyhltable { border: 0; margin-bottom: 0; }
-table.pyhltable td { vertical-align: top; padding-top: 0; padding-bottom: 0; }
-table.pyhltable td.code { padding-left: .75em; padding-right: 0; }
-.highlight.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #dddddd; }
-.highlight.pygments .lineno { display: inline-block; margin-right: .25em; }
-table.pyhltable .linenodiv { background-color: transparent !important; padding-right: 0 !important; }
-.quoteblock { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
-.quoteblock blockquote { margin: 0 0 1.25em 0; padding: 0 0 0.5625em 0; border: 0; }
-.quoteblock blockquote > .paragraph:last-child p { margin-bottom: 0; }
-.quoteblock .attribution { margin-top: -.25em; padding-bottom: 0.5625em; font-size: inherit; color: #555555; }
-.quoteblock .attribution br { display: none; }
-.quoteblock .attribution cite { display: block; margin-bottom: 0.625em; }
-table thead th, table tfoot th { font-weight: bold; }
-table.tableblock.grid-all { border-collapse: separate; border-spacing: 1px; -webkit-border-radius: 4px; border-radius: 4px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd; }
-table.tableblock.frame-topbot, table.tableblock.frame-none { border-left: 0; border-right: 0; }
-table.tableblock.frame-sides, table.tableblock.frame-none { border-top: 0; border-bottom: 0; }
-table.tableblock td .paragraph:last-child p, table.tableblock td > p:last-child { margin-bottom: 0; }
-th.tableblock.halign-left, td.tableblock.halign-left { text-align: left; }
-th.tableblock.halign-right, td.tableblock.halign-right { text-align: right; }
-th.tableblock.halign-center, td.tableblock.halign-center { text-align: center; }
-th.tableblock.valign-top, td.tableblock.valign-top { vertical-align: top; }
-th.tableblock.valign-bottom, td.tableblock.valign-bottom { vertical-align: bottom; }
-th.tableblock.valign-middle, td.tableblock.valign-middle { vertical-align: middle; }
-p.tableblock.header { color: #222222; font-weight: bold; }
-td > div.verse { white-space: pre; }
-ol { margin-left: 1.75em; }
-ul li ol { margin-left: 1.5em; }
-dl dd { margin-left: 1.125em; }
-dl dd:last-child, dl dd:last-child > :last-child { margin-bottom: 0; }
-ol > li p, ul > li p, ul dd, ol dd, .olist .olist, .ulist .ulist, .ulist .olist, .olist .ulist { margin-bottom: 0.625em; }
-ul.unstyled, ol.unnumbered, ul.checklist, ul.none { list-style-type: none; }
-ul.unstyled, ol.unnumbered, ul.checklist { margin-left: 0.625em; }
-ul.checklist li > p:first-child > i[class^="icon-check"]:first-child, ul.checklist li > p:first-child > input[type="checkbox"]:first-child { margin-right: 0.25em; }
-ul.checklist li > p:first-child > input[type="checkbox"]:first-child { position: relative; top: 1px; }
-ul.inline { margin: 0 auto 0.625em auto; margin-left: -1.375em; margin-right: 0; padding: 0; list-style: none; overflow: hidden; }
-ul.inline > li { list-style: none; float: left; margin-left: 1.375em; display: block; }
-ul.inline > li > * { display: block; }
-.unstyled dl dt { font-weight: normal; font-style: normal; }
-ol.arabic { list-style-type: decimal; }
-ol.decimal { list-style-type: decimal-leading-zero; }
-ol.loweralpha { list-style-type: lower-alpha; }
-ol.upperalpha { list-style-type: upper-alpha; }
-ol.lowerroman { list-style-type: lower-roman; }
-ol.upperroman { list-style-type: upper-roman; }
-ol.lowergreek { list-style-type: lower-greek; }
-.hdlist > table, .colist > table { border: 0; background: none; }
-.hdlist > table > tbody > tr, .colist > table > tbody > tr { background: none; }
-td.hdlist1 { padding-right: .8em; font-weight: bold; }
-td.hdlist1, td.hdlist2 { vertical-align: top; }
-.literalblock + .colist, .listingblock + .colist { margin-top: -0.5em; }
-.colist > table tr > td:first-of-type { padding: 0 .8em; line-height: 1; }
-.colist > table tr > td:last-of-type { padding: 0.25em 0; }
-.qanda > ol > li > p > em:only-child { color: #00467f; }
-.thumb, .th { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px #dddddd; box-shadow: 0 0 0 1px #dddddd; }
-.imageblock.left, .imageblock[style*="float: left"] { margin: 0.25em 0.625em 1.25em 0; }
-.imageblock.right, .imageblock[style*="float: right"] { margin: 0.25em 0 1.25em 0.625em; }
-.imageblock > .title { margin-bottom: 0; }
-.imageblock.thumb, .imageblock.th { border-width: 6px; }
-.imageblock.thumb > .title, .imageblock.th > .title { padding: 0 0.125em; }
-.image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
-.image.left { margin-right: 0.625em; }
-.image.right { margin-left: 0.625em; }
-a.image { text-decoration: none; }
-span.footnote, span.footnoteref { vertical-align: super; font-size: 0.875em; }
-span.footnote a, span.footnoteref a { text-decoration: none; }
-#footnotes { padding-top: 0.75em; padding-bottom: 0.75em; margin-bottom: 0.625em; }
-#footnotes hr { width: 20%; min-width: 6.25em; margin: -.25em 0 .75em 0; border-width: 1px 0 0 0; }
-#footnotes .footnote { padding: 0 0.375em; line-height: 1.3; font-size: 0.875em; margin-left: 1.2em; text-indent: -1.2em; margin-bottom: .2em; }
-#footnotes .footnote a:first-of-type { font-weight: bold; text-decoration: none; }
-#footnotes .footnote:last-of-type { margin-bottom: 0; }
-#content #footnotes { margin-top: -0.625em; margin-bottom: 0; padding: 0.75em 0; }
-.gist .file-data > table { border: none; background: #fff; width: 100%; margin-bottom: 0; }
-.gist .file-data > table td.line-data { width: 99%; }
-div.unbreakable { page-break-inside: avoid; }
-.big { font-size: larger; }
-.small { font-size: smaller; }
-.underline { text-decoration: underline; }
-.overline { text-decoration: overline; }
-.line-through { text-decoration: line-through; }
-.aqua { color: #00bfbf; }
-.aqua-background { background-color: #00fafa; }
-.black { color: black; }
-.black-background { background-color: black; }
-.blue { color: #0000bf; }
-.blue-background { background-color: #0000fa; }
-.fuchsia { color: #bf00bf; }
-.fuchsia-background { background-color: #fa00fa; }
-.gray { color: #606060; }
-.gray-background { background-color: #7d7d7d; }
-.green { color: #006000; }
-.green-background { background-color: #007d00; }
-.lime { color: #00bf00; }
-.lime-background { background-color: #00fa00; }
-.maroon { color: #600000; }
-.maroon-background { background-color: #7d0000; }
-.navy { color: #000060; }
-.navy-background { background-color: #00007d; }
-.olive { color: #606000; }
-.olive-background { background-color: #7d7d00; }
-.purple { color: #600060; }
-.purple-background { background-color: #7d007d; }
-.red { color: #bf0000; }
-.red-background { background-color: #fa0000; }
-.silver { color: #909090; }
-.silver-background { background-color: #bcbcbc; }
-.teal { color: #006060; }
-.teal-background { background-color: #007d7d; }
-.white { color: #bfbfbf; }
-.white-background { background-color: #fafafa; }
-.yellow { color: #bfbf00; }
-.yellow-background { background-color: #fafa00; }
-span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
-.admonitionblock td.icon [class^="icon-"]:before { font-size: 2.5em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); cursor: default; }
-.admonitionblock td.icon .icon-note:before { content: "\f05a"; color: #005498; color: #003f72; }
-.admonitionblock td.icon .icon-tip:before { content: "\f0eb"; text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8); color: #111; }
-.admonitionblock td.icon .icon-warning:before { content: "\f071"; color: #bf6900; }
-.admonitionblock td.icon .icon-caution:before { content: "\f06d"; color: #bf3400; }
-.admonitionblock td.icon .icon-important:before { content: "\f06a"; color: #bf0000; }
-.conum { display: inline-block; color: white !important; background-color: #222222; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; width: 20px; height: 20px; font-size: 12px; font-weight: bold; line-height: 20px; font-family: Arial, sans-serif; font-style: normal; position: relative; top: -2px; letter-spacing: -1px; }
-.conum * { color: white !important; }
-.conum + b { display: none; }
-.conum:after { content: attr(data-value); }
-.conum:not([data-value]):empty { display: none; }
-.literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>test</title>
+      <style>
 
-</style>
-</head>
-<body class="article">
-<div id="header">
-<h1>User Functional Specification</h1>
-<span id="author" class="author">The KipOpen Team</span><br>
-<span id="email" class="email"><a href="mailto:camilo.tejeiro@gmail.com">camilo.tejeiro@gmail.com</a></span><br>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_introduction">Introduction</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_purpose">Purpose</a></li>
-<li><a href="#_scope">Scope</a></li>
-<li><a href="#_reference_documents">Reference Documents</a></li>
-</ul>
-</li>
-<li><a href="#_project_overview">Project Overview</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_the_problem">The problem</a></li>
-<li><a href="#_our_mission">Our Mission</a></li>
-<li><a href="#_the_web_application">The Web Application</a></li>
-</ul>
-</li>
-<li><a href="#_user_characteristics">User Characteristics</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_platform_administrator_host">Platform Administrator/Host</a></li>
-<li><a href="#_technical_developers">Technical Developers</a></li>
-<li><a href="#_informed_investors_aka_informed_consumers">Informed Investors (aka Informed Consumers)</a></li>
-</ul>
-</li>
-<li><a href="#_user_operational_environment">User Operational Environment</a></li>
-<li><a href="#_use_cases">Use Cases</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_an_administrator_hosts_a_market_place">An Administrator Hosts a Market Place</a></li>
-<li><a href="#_a_developer_creates_a_project">A Developer Creates a Project</a></li>
-<li><a href="#_a_developer_joins_a_project">A Developer Joins a Project</a></li>
-<li><a href="#_an_individual_investor_funds_a_project">An Individual Investor Funds a Project</a></li>
-<li><a href="#_an_institutional_investor_funds_a_project">An Institutional Investor Funds a Project</a></li>
-<li><a href="#_an_investor_creates_a_project">An Investor Creates a Project</a></li>
-</ul>
-</li>
-<li><a href="#_features_and_requirements">Features and Requirements</a></li>
-<li><a href="#_postponed_removed_features">Postponed/Removed Features</a></li>
-<li><a href="#_visual_specification">Visual Specification</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_home_page">Home Page</a></li>
-<li><a href="#_login_registration_page">Login/Registration Page</a></li>
-<li><a href="#_about_us_page">About Us Page</a></li>
-<li><a href="#_faq_page">FAQ Page</a></li>
-<li><a href="#_search_page">Search Page</a></li>
-<li><a href="#_create_edit_page">Create/Edit Page</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div id="content">
+        #wrapper {width: 960px; margin: 0 auto;}
+            /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+        article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+        audio, canvas, video { display: inline-block; }
+        audio:not([controls]) { display: none; height: 0; }
+        [hidden], template { display: none; }
+        script { display: none !important; }
+        html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+        body { margin: 0; }
+        a { background: transparent; }
+        a:focus { outline: thin dotted; }
+        a:active, a:hover { outline: 0; }
+        h1 { font-size: 2em; margin: 0.67em 0; }
+        abbr[title] { border-bottom: 1px dotted; }
+        b, strong { font-weight: bold; }
+        dfn { font-style: italic; }
+        hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+        mark { background: #ff0; color: #000; }
+        code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
+        pre { white-space: pre-wrap; }
+        q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+        small { font-size: 80%; }
+        sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+        sup { top: -0.5em; }
+        sub { bottom: -0.25em; }
+        img { border: 0; }
+        svg:not(:root) { overflow: hidden; }
+        figure { margin: 0; }
+        fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+        legend { border: 0; padding: 0; }
+        button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; }
+        button, input { line-height: normal; }
+        button, select { text-transform: none; }
+        button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+        button[disabled], html input[disabled] { cursor: default; }
+        input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+        input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+        input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+        button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+        textarea { overflow: auto; vertical-align: top; }
+        table { border-collapse: collapse; border-spacing: 0; }
+        meta.foundation-mq-small { font-family: "only screen and (min-width: 768px)"; width: 768px; }
+        meta.foundation-mq-medium { font-family: "only screen and (min-width:1280px)"; width: 1280px; }
+        meta.foundation-mq-large { font-family: "only screen and (min-width:1440px)"; width: 1440px; }
+        *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+        html, body { font-size: 100%; }
+        body { background: white; color: #222222; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: auto; }
+        a:hover { cursor: pointer; }
+        img, object, embed { max-width: 100%; height: auto; }
+        object, embed { height: 100%; }
+        img { -ms-interpolation-mode: bicubic; }
+        #map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object { max-width: none !important; }
+        .left { float: left !important; }
+        .right { float: right !important; }
+        .text-left { text-align: left !important; }
+        .text-right { text-align: right !important; }
+        .text-center { text-align: center !important; }
+        .text-justify { text-align: justify !important; }
+        .hide { display: none; }
+        .antialiased, body { -webkit-font-smoothing: antialiased; }
+        img { display: inline-block; vertical-align: middle; }
+        textarea { height: auto; min-height: 50px; }
+        select { width: 100%; }
+        p.lead, .paragraph.lead > p, #preamble > .sectionbody > .paragraph:first-of-type p { font-size: 1.21875em; line-height: 1.6; }
+        .subheader, #content #toctitle, .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .mathblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title, .tableblock > caption { line-height: 1.4; color: #7a2518; font-weight: 300; margin-top: 0.2em; margin-bottom: 0.5em; }
+        div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; direction: ltr; }
+        a { color: #005498; text-decoration: underline; line-height: inherit; }
+        a:hover, a:focus { color: #00467f; }
+        a img { border: none; }
+        p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; text-rendering: optimizeLegibility; }
+        p aside { font-size: 0.875em; line-height: 1.35; font-style: italic; }
+        h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { font-family: Georgia, "URW Bookman L", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; color: #ba3925; text-rendering: optimizeLegibility; margin-top: 1em; margin-bottom: 0.5em; line-height: 1.2125em; }
+        h1 small, h2 small, h3 small, #toctitle small, .sidebarblock > .content > .title small, h4 small, h5 small, h6 small { font-size: 60%; color: #e99b8f; line-height: 0; }
+        h1 { font-size: 2.125em; }
+        h2 { font-size: 1.6875em; }
+        h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.375em; }
+        h4 { font-size: 1.125em; }
+        h5 { font-size: 1.125em; }
+        h6 { font-size: 1em; }
+        hr { border: solid #dddddd; border-width: 1px 0 0; clear: both; margin: 1.25em 0 1.1875em; height: 0; }
+        em, i { font-style: italic; line-height: inherit; }
+        strong, b { font-weight: bold; line-height: inherit; }
+        small { font-size: 60%; line-height: inherit; }
+        code { font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; color: #6d180b; }
+        ul, ol, dl { font-size: 1em; line-height: 1.6; margin-bottom: 1.25em; list-style-position: outside; font-family: inherit; }
+        ul, ol { margin-left: 1.5em; }
+        ul.no-bullet, ol.no-bullet { margin-left: 1.5em; }
+        ul li ul, ul li ol { margin-left: 1.25em; margin-bottom: 0; font-size: 1em; }
+        ul.square li ul, ul.circle li ul, ul.disc li ul { list-style: inherit; }
+        ul.square { list-style-type: square; }
+        ul.circle { list-style-type: circle; }
+        ul.disc { list-style-type: disc; }
+        ul.no-bullet { list-style: none; }
+        ol li ul, ol li ol { margin-left: 1.25em; margin-bottom: 0; }
+        dl dt { margin-bottom: 0.3125em; font-weight: bold; }
+        dl dd { margin-bottom: 1.25em; }
+        abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222222; border-bottom: 1px dotted #dddddd; cursor: help; }
+        abbr { text-transform: none; }
+        blockquote { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
+        blockquote cite { display: block; font-size: inherit; color: #555555; }
+        blockquote cite:before { content: "\2014 \0020"; }
+        blockquote cite a, blockquote cite a:visited { color: #555555; }
+        blockquote, blockquote p { line-height: 1.6; color: #6f6f6f; }
+        .vcard { display: inline-block; margin: 0 0 1.25em 0; border: 1px solid #dddddd; padding: 0.625em 0.75em; }
+        .vcard li { margin: 0; display: block; }
+        .vcard .fn { font-weight: bold; font-size: 0.9375em; }
+        .vevent .summary { font-weight: bold; }
+        .vevent abbr { cursor: auto; text-decoration: none; font-weight: bold; border: none; padding: 0 0.0625em; }
+        @media only screen and (min-width: 768px) { h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 { line-height: 1.4; }
+          h1 { font-size: 2.75em; }
+          h2 { font-size: 2.3125em; }
+          h3, #toctitle, .sidebarblock > .content > .title { font-size: 1.6875em; }
+          h4 { font-size: 1.4375em; } }
+        .print-only { display: none !important; }
+        @media print { * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
+          a, a:visited { text-decoration: underline; }
+          a[href]:after { content: " (" attr(href) ")"; }
+          abbr[title]:after { content: " (" attr(title) ")"; }
+          .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+          pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+          thead { display: table-header-group; }
+          tr, img { page-break-inside: avoid; }
+          img { max-width: 100% !important; }
+          @page { margin: 0.5cm; }
+          p, h2, h3, #toctitle, .sidebarblock > .content > .title { orphans: 3; widows: 3; }
+          h2, h3, #toctitle, .sidebarblock > .content > .title { page-break-after: avoid; }
+          .hide-on-print { display: none !important; }
+          .print-only { display: block !important; }
+          .hide-for-print { display: none !important; }
+          .show-for-print { display: inherit !important; } }
+        table { background: white; margin-bottom: 1.25em; border: solid 1px #dddddd; }
+        table thead, table tfoot { background: whitesmoke; font-weight: bold; }
+        table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td { padding: 0.5em 0.625em 0.625em; font-size: inherit; color: #222222; text-align: left; }
+        table tr th, table tr td { padding: 0.5625em 0.625em; font-size: inherit; color: #222222; }
+        table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #f9f9f9; }
+        table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td { display: table-cell; line-height: 1.6; }
+        .clearfix:before, .clearfix:after, .float-group:before, .float-group:after { content: " "; display: table; }
+        .clearfix:after, .float-group:after { clear: both; }
+        *:not(pre) > code { font-size: 0.9375em; padding: 1px 3px 0; white-space: nowrap; background-color: #f2f2f2; border: 1px solid #cccccc; -webkit-border-radius: 4px; border-radius: 4px; text-shadow: none; }
+        pre, pre > code { line-height: 1.4; color: inherit; font-family: Consolas, "Liberation Mono", Courier, monospace; font-weight: normal; }
+        kbd.keyseq { color: #555555; }
+        kbd:not(.keyseq) { display: inline-block; color: #222222; font-size: 0.75em; line-height: 1.4; background-color: #F7F7F7; border: 1px solid #ccc; -webkit-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; margin: -0.15em 0.15em 0 0.15em; padding: 0.2em 0.6em 0.2em 0.5em; vertical-align: middle; white-space: nowrap; }
+        kbd kbd:first-child { margin-left: 0; }
+        kbd kbd:last-child { margin-right: 0; }
+        .menuseq, .menu { color: #090909; }
+        b.button:before { content: '[ '; }
+        b.button:after { content: ' ]'; }
+        p a > code:hover { color: #561309; }
+        #header, #content, #footnotes, #footer { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5em; *zoom: 1; position: relative; padding-left: 0.9375em; padding-right: 0.9375em; }
+        #header:before, #header:after, #content:before, #content:after, #footnotes:before, #footnotes:after, #footer:before, #footer:after { content: " "; display: table; }
+        #header:after, #content:after, #footnotes:after, #footer:after { clear: both; }
+        #header { margin-bottom: 2.5em; }
+        #header > h1 { color: black; font-weight: normal; border-bottom: 1px solid #dddddd; margin-bottom: -28px; padding-bottom: 32px; }
+        #header span { color: #6f6f6f; }
+        #header #revnumber { text-transform: capitalize; }
+        #header br { display: none; }
+        #header br + span { padding-left: 3px; }
+        #header br + span:before { content: "\2013 \0020"; }
+        #header br + span.author { padding-left: 0; }
+        #header br + span.author:before { content: ", "; }
+        #toc { border-bottom: 3px double #ebebeb; padding-bottom: 1.25em; }
+        #toc > ul { margin-left: 0.25em; }
+        #toc ul.sectlevel0 > li > a { font-style: italic; }
+        #toc ul.sectlevel0 ul.sectlevel1 { margin-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+        #toc ul { list-style-type: none; }
+        #toctitle { color: #7a2518; }
+        @media only screen and (min-width: 768px) { body.toc2 { padding-left: 15em; padding-right: 0; }
+          #toc.toc2 { position: fixed; width: 15em; left: 0; top: 0; border-right: 1px solid #ebebeb; border-bottom: 0; z-index: 1000; padding: 1em; height: 100%; overflow: auto; }
+          #toc.toc2 #toctitle { margin-top: 0; font-size: 1.2em; }
+          #toc.toc2 > ul { font-size: .90em; }
+          #toc.toc2 ul ul { margin-left: 0; padding-left: 1em; }
+          #toc.toc2 ul.sectlevel0 ul.sectlevel1 { padding-left: 0; margin-top: 0.5em; margin-bottom: 0.5em; }
+          body.toc2.toc-right { padding-left: 0; padding-right: 15em; }
+          body.toc2.toc-right #toc.toc2 { border-right: 0; border-left: 1px solid #ebebeb; left: auto; right: 0; } }
+        @media only screen and (min-width: 1280px) { body.toc2 { padding-left: 20em; padding-right: 0; }
+          #toc.toc2 { width: 20em; }
+          #toc.toc2 #toctitle { font-size: 1.375em; }
+          #toc.toc2 > ul { font-size: 0.95em; }
+          #toc.toc2 ul ul { padding-left: 1.25em; }
+          body.toc2.toc-right { padding-left: 0; padding-right: 20em; } }
+        #content #toc { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; border-width: 0; -webkit-border-radius: 4px; border-radius: 4px; }
+        #content #toc > :first-child { margin-top: 0; }
+        #content #toc > :last-child { margin-bottom: 0; }
+        #content #toc a { text-decoration: none; }
+        #content #toctitle { font-weight: bold; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-size: 1em; padding-left: 0.125em; }
+        #footer { max-width: 100%; background-color: #222222; padding: 1.25em; }
+        #footer-text { color: #dddddd; line-height: 1.44; }
+        .sect1 { padding-bottom: 1.25em; }
+        .sect1 + .sect1 { border-top: 3px double #ebebeb; }
+        #content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor { position: absolute; width: 1em; margin-left: -1em; display: block; text-decoration: none; visibility: hidden; text-align: center; font-weight: normal; }
+        #content h1 > a.anchor:before, h2 > a.anchor:before, h3 > a.anchor:before, #toctitle > a.anchor:before, .sidebarblock > .content > .title > a.anchor:before, h4 > a.anchor:before, h5 > a.anchor:before, h6 > a.anchor:before { content: '\00A7'; font-size: .85em; vertical-align: text-top; display: block; margin-top: 0.05em; }
+        #content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover { visibility: visible; }
+        #content h1 > a.link, h2 > a.link, h3 > a.link, #toctitle > a.link, .sidebarblock > .content > .title > a.link, h4 > a.link, h5 > a.link, h6 > a.link { color: #ba3925; text-decoration: none; }
+        #content h1 > a.link:hover, h2 > a.link:hover, h3 > a.link:hover, #toctitle > a.link:hover, .sidebarblock > .content > .title > a.link:hover, h4 > a.link:hover, h5 > a.link:hover, h6 > a.link:hover { color: #a53221; }
+        .imageblock, .literalblock, .listingblock, .mathblock, .verseblock, .videoblock { margin-bottom: 1.25em; }
+        .admonitionblock td.content > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .mathblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, .sidebarblock > .title, .tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title { text-align: left; font-weight: bold; }
+        .tableblock > caption { text-align: left; font-weight: bold; white-space: nowrap; overflow: visible; max-width: 0; }
+        table.tableblock #preamble > .sectionbody > .paragraph:first-of-type p { font-size: inherit; }
+        .admonitionblock > table { border: 0; background: none; width: 100%; }
+        .admonitionblock > table td.icon { text-align: center; width: 80px; }
+        .admonitionblock > table td.icon img { max-width: none; }
+        .admonitionblock > table td.icon .title { font-weight: bold; text-transform: uppercase; }
+        .admonitionblock > table td.content { padding-left: 1.125em; padding-right: 1.25em; border-left: 1px solid #dddddd; color: #6f6f6f; }
+        .admonitionblock > table td.content > :last-child > :last-child { margin-bottom: 0; }
+        .exampleblock > .content { border-style: solid; border-width: 1px; border-color: #e6e6e6; margin-bottom: 1.25em; padding: 1.25em; background: white; -webkit-border-radius: 4px; border-radius: 4px; }
+        .exampleblock > .content > :first-child { margin-top: 0; }
+        .exampleblock > .content > :last-child { margin-bottom: 0; }
+        .exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6, .exampleblock > .content p { color: #333333; }
+        .exampleblock > .content h1, .exampleblock > .content h2, .exampleblock > .content h3, .exampleblock > .content #toctitle, .sidebarblock.exampleblock > .content > .title, .exampleblock > .content h4, .exampleblock > .content h5, .exampleblock > .content h6 { line-height: 1; margin-bottom: 0.625em; }
+        .exampleblock > .content h1.subheader, .exampleblock > .content h2.subheader, .exampleblock > .content h3.subheader, .exampleblock > .content .subheader#toctitle, .sidebarblock.exampleblock > .content > .subheader.title, .exampleblock > .content h4.subheader, .exampleblock > .content h5.subheader, .exampleblock > .content h6.subheader { line-height: 1.4; }
+        .exampleblock.result > .content { -webkit-box-shadow: 0 1px 8px #d9d9d9; box-shadow: 0 1px 8px #d9d9d9; }
+        .sidebarblock { border-style: solid; border-width: 1px; border-color: #d9d9d9; margin-bottom: 1.25em; padding: 1.25em; background: #f2f2f2; -webkit-border-radius: 4px; border-radius: 4px; }
+        .sidebarblock > :first-child { margin-top: 0; }
+        .sidebarblock > :last-child { margin-bottom: 0; }
+        .sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6, .sidebarblock p { color: #333333; }
+        .sidebarblock h1, .sidebarblock h2, .sidebarblock h3, .sidebarblock #toctitle, .sidebarblock > .content > .title, .sidebarblock h4, .sidebarblock h5, .sidebarblock h6 { line-height: 1; margin-bottom: 0.625em; }
+        .sidebarblock h1.subheader, .sidebarblock h2.subheader, .sidebarblock h3.subheader, .sidebarblock .subheader#toctitle, .sidebarblock > .content > .subheader.title, .sidebarblock h4.subheader, .sidebarblock h5.subheader, .sidebarblock h6.subheader { line-height: 1.4; }
+        .sidebarblock > .content > .title { color: #7a2518; margin-top: 0; line-height: 1.6; }
+        .exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child { margin-bottom: 0; }
+        .literalblock pre:not([class]), .listingblock pre:not([class]) { background: none; }
+        .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { border-width: 1px 0; border-style: dotted; border-color: #bfbfbf; -webkit-border-radius: 4px; border-radius: 4px; padding: 0.75em 0.75em 0.5em 0.75em; word-wrap: break-word; }
+        .literalblock pre.nowrap, .literalblock pre[class].nowrap, .listingblock pre.nowrap, .listingblock pre[class].nowrap { overflow-x: auto; white-space: pre; word-wrap: normal; }
+        .literalblock pre > code, .literalblock pre[class] > code, .listingblock pre > code, .listingblock pre[class] > code { display: block; }
+        @media only screen { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.8em; } }
+        @media only screen and (min-width: 768px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 0.9em; } }
+        @media only screen and (min-width: 1280px) { .literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] { font-size: 1em; } }
+        .listingblock pre.highlight { padding: 0; }
+        .listingblock pre.highlight > code { padding: 0.75em 0.75em 0.5em 0.75em; }
+        .listingblock > .content { position: relative; }
+        .listingblock:hover code[class*=" language-"]:before { text-transform: uppercase; font-size: 0.9em; color: #999; position: absolute; top: 0.375em; right: 0.375em; }
+        .listingblock:hover code.asciidoc:before { content: "asciidoc"; }
+        .listingblock:hover code.clojure:before { content: "clojure"; }
+        .listingblock:hover code.css:before { content: "css"; }
+        .listingblock:hover code.groovy:before { content: "groovy"; }
+        .listingblock:hover code.html:before { content: "html"; }
+        .listingblock:hover code.java:before { content: "java"; }
+        .listingblock:hover code.javascript:before { content: "javascript"; }
+        .listingblock:hover code.python:before { content: "python"; }
+        .listingblock:hover code.ruby:before { content: "ruby"; }
+        .listingblock:hover code.sass:before { content: "sass"; }
+        .listingblock:hover code.scss:before { content: "scss"; }
+        .listingblock:hover code.xml:before { content: "xml"; }
+        .listingblock:hover code.yaml:before { content: "yaml"; }
+        .listingblock.terminal pre .command:before { content: attr(data-prompt); padding-right: 0.5em; color: #999; }
+        .listingblock.terminal pre .command:not([data-prompt]):before { content: '$'; }
+        table.pyhltable { border: 0; margin-bottom: 0; }
+        table.pyhltable td { vertical-align: top; padding-top: 0; padding-bottom: 0; }
+        table.pyhltable td.code { padding-left: .75em; padding-right: 0; }
+        .highlight.pygments .lineno, table.pyhltable td:not(.code) { color: #999; padding-left: 0; padding-right: .5em; border-right: 1px solid #dddddd; }
+        .highlight.pygments .lineno { display: inline-block; margin-right: .25em; }
+        table.pyhltable .linenodiv { background-color: transparent !important; padding-right: 0 !important; }
+        .quoteblock { margin: 0 0 1.25em; padding: 0.5625em 1.25em 0 1.1875em; border-left: 1px solid #dddddd; }
+        .quoteblock blockquote { margin: 0 0 1.25em 0; padding: 0 0 0.5625em 0; border: 0; }
+        .quoteblock blockquote > .paragraph:last-child p { margin-bottom: 0; }
+        .quoteblock .attribution { margin-top: -.25em; padding-bottom: 0.5625em; font-size: inherit; color: #555555; }
+        .quoteblock .attribution br { display: none; }
+        .quoteblock .attribution cite { display: block; margin-bottom: 0.625em; }
+        table thead th, table tfoot th { font-weight: bold; }
+        table.tableblock.grid-all { border-collapse: separate; border-spacing: 1px; -webkit-border-radius: 4px; border-radius: 4px; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd; }
+        table.tableblock.frame-topbot, table.tableblock.frame-none { border-left: 0; border-right: 0; }
+        table.tableblock.frame-sides, table.tableblock.frame-none { border-top: 0; border-bottom: 0; }
+        table.tableblock td .paragraph:last-child p > p:last-child, table.tableblock th > p:last-child, table.tableblock td > p:last-child { margin-bottom: 0; }
+        th.tableblock.halign-left, td.tableblock.halign-left { text-align: left; }
+        th.tableblock.halign-right, td.tableblock.halign-right { text-align: right; }
+        th.tableblock.halign-center, td.tableblock.halign-center { text-align: center; }
+        th.tableblock.valign-top, td.tableblock.valign-top { vertical-align: top; }
+        th.tableblock.valign-bottom, td.tableblock.valign-bottom { vertical-align: bottom; }
+        th.tableblock.valign-middle, td.tableblock.valign-middle { vertical-align: middle; }
+        tbody tr th { display: table-cell; line-height: 1.6; background: whitesmoke; }
+        tbody tr th, tbody tr th p, tfoot tr th, tfoot tr th p { color: #222222; font-weight: bold; }
+        td > div.verse { white-space: pre; }
+        ol { margin-left: 1.75em; }
+        ul li ol { margin-left: 1.5em; }
+        dl dd { margin-left: 1.125em; }
+        dl dd:last-child, dl dd:last-child > :last-child { margin-bottom: 0; }
+        ol > li p, ul > li p, ul dd, ol dd, .olist .olist, .ulist .ulist, .ulist .olist, .olist .ulist { margin-bottom: 0.625em; }
+        ul.unstyled, ol.unnumbered, ul.checklist, ul.none { list-style-type: none; }
+        ul.unstyled, ol.unnumbered, ul.checklist { margin-left: 0.625em; }
+        ul.checklist li > p:first-child > i[class^="icon-check"]:first-child, ul.checklist li > p:first-child > input[type="checkbox"]:first-child { margin-right: 0.25em; }
+        ul.checklist li > p:first-child > input[type="checkbox"]:first-child { position: relative; top: 1px; }
+        ul.inline { margin: 0 auto 0.625em auto; margin-left: -1.375em; margin-right: 0; padding: 0; list-style: none; overflow: hidden; }
+        ul.inline > li { list-style: none; float: left; margin-left: 1.375em; display: block; }
+        ul.inline > li > * { display: block; }
+        .unstyled dl dt { font-weight: normal; font-style: normal; }
+        ol.arabic { list-style-type: decimal; }
+        ol.decimal { list-style-type: decimal-leading-zero; }
+        ol.loweralpha { list-style-type: lower-alpha; }
+        ol.upperalpha { list-style-type: upper-alpha; }
+        ol.lowerroman { list-style-type: lower-roman; }
+        ol.upperroman { list-style-type: upper-roman; }
+        ol.lowergreek { list-style-type: lower-greek; }
+        .hdlist > table, .colist > table { border: 0; background: none; }
+        .hdlist > table > tbody > tr, .colist > table > tbody > tr { background: none; }
+        td.hdlist1 { padding-right: .8em; font-weight: bold; }
+        td.hdlist1, td.hdlist2 { vertical-align: top; }
+        .literalblock + .colist, .listingblock + .colist { margin-top: -0.5em; }
+        .colist > table tr > td:first-of-type { padding: 0 .8em; line-height: 1; }
+        .colist > table tr > td:last-of-type { padding: 0.25em 0; }
+        .qanda > ol > li > p > em:only-child { color: #00467f; }
+        .thumb, .th { line-height: 0; display: inline-block; border: solid 4px white; -webkit-box-shadow: 0 0 0 1px #dddddd; box-shadow: 0 0 0 1px #dddddd; }
+        .imageblock.left, .imageblock[style*="float: left"] { margin: 0.25em 0.625em 1.25em 0; }
+        .imageblock.right, .imageblock[style*="float: right"] { margin: 0.25em 0 1.25em 0.625em; }
+        .imageblock > .title { margin-bottom: 0; }
+        .imageblock.thumb, .imageblock.th { border-width: 6px; }
+        .imageblock.thumb > .title, .imageblock.th > .title { padding: 0 0.125em; }
+        .image.left, .image.right { margin-top: 0.25em; margin-bottom: 0.25em; display: inline-block; line-height: 0; }
+        .image.left { margin-right: 0.625em; }
+        .image.right { margin-left: 0.625em; }
+        a.image { text-decoration: none; }
+        span.footnote, span.footnoteref { vertical-align: super; font-size: 0.875em; }
+        span.footnote a, span.footnoteref a { text-decoration: none; }
+        #footnotes { padding-top: 0.75em; padding-bottom: 0.75em; margin-bottom: 0.625em; }
+        #footnotes hr { width: 20%; min-width: 6.25em; margin: -.25em 0 .75em 0; border-width: 1px 0 0 0; }
+        #footnotes .footnote { padding: 0 0.375em; line-height: 1.3; font-size: 0.875em; margin-left: 1.2em; text-indent: -1.2em; margin-bottom: .2em; }
+        #footnotes .footnote a:first-of-type { font-weight: bold; text-decoration: none; }
+        #footnotes .footnote:last-of-type { margin-bottom: 0; }
+        #content #footnotes { margin-top: -0.625em; margin-bottom: 0; padding: 0.75em 0; }
+        .gist .file-data > table { border: none; background: #fff; width: 100%; margin-bottom: 0; }
+        .gist .file-data > table td.line-data { width: 99%; }
+        div.unbreakable { page-break-inside: avoid; }
+        .big { font-size: larger; }
+        .small { font-size: smaller; }
+        .underline { text-decoration: underline; }
+        .overline { text-decoration: overline; }
+        .line-through { text-decoration: line-through; }
+        .aqua { color: #00bfbf; }
+        .aqua-background { background-color: #00fafa; }
+        .black { color: black; }
+        .black-background { background-color: black; }
+        .blue { color: #0000bf; }
+        .blue-background { background-color: #0000fa; }
+        .fuchsia { color: #bf00bf; }
+        .fuchsia-background { background-color: #fa00fa; }
+        .gray { color: #606060; }
+        .gray-background { background-color: #7d7d7d; }
+        .green { color: #006000; }
+        .green-background { background-color: #007d00; }
+        .lime { color: #00bf00; }
+        .lime-background { background-color: #00fa00; }
+        .maroon { color: #600000; }
+        .maroon-background { background-color: #7d0000; }
+        .navy { color: #000060; }
+        .navy-background { background-color: #00007d; }
+        .olive { color: #606000; }
+        .olive-background { background-color: #7d7d00; }
+        .purple { color: #600060; }
+        .purple-background { background-color: #7d007d; }
+        .red { color: #bf0000; }
+        .red-background { background-color: #fa0000; }
+        .silver { color: #909090; }
+        .silver-background { background-color: #bcbcbc; }
+        .teal { color: #006060; }
+        .teal-background { background-color: #007d7d; }
+        .white { color: #bfbfbf; }
+        .white-background { background-color: #fafafa; }
+        .yellow { color: #bfbf00; }
+        .yellow-background { background-color: #fafa00; }
+        span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
+        .admonitionblock td.icon [class^="icon-"]:before { font-size: 2.5em; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); cursor: default; }
+        .admonitionblock td.icon .icon-note:before { content: "\f05a"; color: #005498; color: #003f72; }
+        .admonitionblock td.icon .icon-tip:before { content: "\f0eb"; text-shadow: 1px 1px 2px rgba(155, 155, 0, 0.8); color: #111; }
+        .admonitionblock td.icon .icon-warning:before { content: "\f071"; color: #bf6900; }
+        .admonitionblock td.icon .icon-caution:before { content: "\f06d"; color: #bf3400; }
+        .admonitionblock td.icon .icon-important:before { content: "\f06a"; color: #bf0000; }
+        .conum { display: inline-block; color: white !important; background-color: #222222; -webkit-border-radius: 100px; border-radius: 100px; text-align: center; width: 20px; height: 20px; font-size: 12px; font-weight: bold; line-height: 20px; font-family: Arial, sans-serif; font-style: normal; position: relative; top: -2px; letter-spacing: -1px; }
+        .conum * { color: white !important; }
+        .conum + b { display: none; }
+        .conum:after { content: attr(data-value); }
+        .conum:not([data-value]):empty { display: none; }
+        .literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
+
+      </style>
+      <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+      <div id="wrapper">
+        <div class="article">
+          <h1>User Functional Specification</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Bear in mind, this document is incomplete;
@@ -435,39 +396,39 @@ a really rough draft that we will use as our starting point. As we move
 forward, this document will take shape and assume a more polished look.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When we refer to "open technology", we don&#8217;t mean a specific
-movement/license in general (e.g. libre software vs open source &#8230;etc).
+When we refer to "open technology", we don’t mean a specific
+movement/license in general (e.g. libre software vs open source …​etc).
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 In this document we are using the words "community investment platform",
 "crowd-funding site" and "marketplace" interchangeably.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="admonitionblock important">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Important</div>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 This document <strong>must not</strong> be dry and boring.
@@ -476,15 +437,64 @@ people actually want to read it and it gets maintained, otherwise this
 document will be useless.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_purpose">1.1. Purpose</a></li>
+<li><a href="#_scope">1.2. Scope</a></li>
+<li><a href="#_reference_documents">1.3. Reference Documents</a></li>
+</ul>
+</li>
+<li><a href="#_project_overview">2. Project Overview</a>
+<ul class="sectlevel2">
+<li><a href="#_the_problem">2.1. The problem</a></li>
+<li><a href="#_our_mission">2.2. Our Mission</a></li>
+<li><a href="#_what_is_kipopen">2.3. What is KipOpen?</a></li>
+</ul>
+</li>
+<li><a href="#_user_characteristics">3. User Characteristics</a>
+<ul class="sectlevel2">
+<li><a href="#_platform_administrator_host">3.1. Platform Administrator/Host</a></li>
+<li><a href="#_technical_developers">3.2. Technical Developers</a></li>
+<li><a href="#_informed_investors_aka_informed_consumers">3.3. Informed Investors (aka Informed Consumers)</a></li>
+</ul>
+</li>
+<li><a href="#_user_operational_environment">4. User Operational Environment</a></li>
+<li><a href="#_use_cases">5. Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#_an_administrator_hosts_a_market_place">5.1. An Administrator Hosts a Market Place</a></li>
+<li><a href="#_a_developer_creates_a_project">5.2. A Developer Creates a Project</a></li>
+<li><a href="#_a_developer_joins_a_project">5.3. A Developer Joins a Project</a></li>
+<li><a href="#_an_individual_investor_funds_a_project">5.4. An Individual Investor Funds a Project</a></li>
+<li><a href="#_an_institutional_investor_funds_a_project">5.5. An Institutional Investor Funds a Project</a></li>
+<li><a href="#_an_investor_creates_a_project">5.6. An Investor Creates a Project</a></li>
+</ul>
+</li>
+<li><a href="#_features_and_requirements">6. Features and Requirements</a></li>
+<li><a href="#_postponed_removed_features">7. Postponed/Removed Features</a></li>
+<li><a href="#_visual_specification">8. Visual Specification</a>
+<ul class="sectlevel2">
+<li><a href="#_home_page">8.1. Home Page</a></li>
+<li><a href="#_login_registration_page">8.2. Login/Registration Page</a></li>
+<li><a href="#_about_us_page">8.3. About Us Page</a></li>
+<li><a href="#_faq_page">8.4. FAQ Page</a></li>
+<li><a href="#_search_page">8.5. Search Page</a></li>
+<li><a href="#_create_edit_page">8.6. Create/Edit Page</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_purpose">Purpose</h3>
+<h3 id="_purpose">1.1. Purpose</h3>
 <div class="paragraph">
 <p>The purpose of this document is to specify the requirements for the
 KipOpen Application (i.e. the web application) in a simple
@@ -492,14 +502,14 @@ and easy to understand manner.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scope">Scope</h3>
+<h3 id="_scope">1.2. Scope</h3>
 <div class="paragraph">
 <p>This document is intended to be easily readable by any average or
 non-technical user.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reference_documents">Reference Documents</h3>
+<h3 id="_reference_documents">1.3. Reference Documents</h3>
 <div class="paragraph">
 <p>Technical design specification.</p>
 </div>
@@ -507,43 +517,51 @@ non-technical user.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_project_overview">Project Overview</h2>
+<h2 id="_project_overview">2. Project Overview</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_the_problem">The problem</h3>
+<h3 id="_the_problem">2.1. The problem</h3>
 <div class="paragraph">
-<p>The lack of sustainable sources of capital for open projects and open
-intellectual property (IP) in general. i.e. most open projects are largely
-funded by aggregate donations and/or corporate sponsorships; this is
-not sustainable in the long term.</p>
+<p><strong>The lack of sustainable sources of capital for open projects and Open
+Intellectual Property (<a href="https://osohm.org/faq/#what-is-open-intellectual-property">OIP</a>)
+in general.</strong></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-While the collaborative development model of open projects can be
-sound, the economics of the system are very weak.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><em>While the collaborative development model of open projects can be
+sound, the economics of the system are weak. Today most open projects
+are largely funded by aggregate donations, and/or corporate
+sponsorships; this is not sustainable in the long term.</em></p>
 </div>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
 <p>For widespread adoption of open technology in the consumer market
 (not only in niche markets): informed consumers must understand the
 value (and the cost) of open technology and engineers and developers
 must make a living.</p>
 </div>
+</blockquote>
+</div>
 <div class="paragraph">
-<p>The KipOpen project aims to provide a solution to this problem:
-a decentralized crowd-sourcing platform for funding the development of
-open products (every stage of the design cycle) by informed consumers.</p>
+<p>The goal of the KipOpen project is to find alternative funding models
+that do not rely on donations but on tangible returns for consumers;
+incentives for them to invest on open technology.</p>
+</div>
+<div class="paragraph">
+<p><strong>We don’t claim to have a solution that solves the funding problem for
+every sector of technology; this would be naive.</strong> The funding problem
+looks different for every sector and must be tackled by passionate
+individuals specializing in those sectors (e.g. it would be futile for
+a hardware engineer to expect to solve the problem for open academic
+research).</p>
+</div>
+<div class="paragraph">
+<p>KipOpen is simply a platform that incentivizes individuals from
+different technology sectors to find appropriate solutions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_our_mission">Our Mission</h3>
+<h3 id="_our_mission">2.2. Our Mission</h3>
 <div class="paragraph">
 <p>Our mission is to provide a viable economic path for
 the design and commercialization of open technologies.</p>
@@ -559,35 +577,55 @@ open is the de-facto standard for consumer products</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_web_application">The Web Application</h3>
+<h3 id="_what_is_kipopen">2.3. What is KipOpen?</h3>
 <div class="paragraph">
 <p>KipOpen is a web application that anyone can download and install in
-their own computer to host an open marketplace (aka community
-investment/crowdfunding site). The application comes with the
-minimal core functionality required to launch the marketplace (in
-small computing devices) and it has a pluggable architecture
+their own computer to host a crowdfunding site.</p>
+</div>
+<div class="paragraph">
+<p>Each individual crowdfunding site is part of a decentralized network
+where peer to peer communication (and a distributed database) allows
+every marketplace to share project/developers reviews, user credentials
+and projects' information. This allows users to login only once and
+search for any project in the network easily.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The black circles represent the KipOpen sites or instances. Peer
+to peer communication between sites is represented with the black
+arrows. Users are represented by the gray circles and gray arrows.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The application comes with the minimal core functionality required to
+operate in small computing devices and it has a pluggable architecture
 to support the addition of extra functionality (e.g. Bitcoin payments
-plugin, Facebook/Twitter integration plugin &#8230;etc) if needed.</p>
+plugin, Facebook/Twitter integration plugin, French Language plugin,
+research crowdfunding plugin, hardware crowdfunding plugin …​etc).</p>
 </div>
 <div class="paragraph">
-<p>Peer to peer Communication is essential among all the KipOpen
-applications and it allows every marketplace to share
-project/developers reviews, user information (so that users don&#8217;t have
-to login multiple times) and projects' information (so that users can
-search for any project in the network easily).</p>
-</div>
-<div class="paragraph">
-<p>Each marketplace application hosts open technology projects and these
-generate a profit for the developer(s), a commission for the site&#8217;s
+<p>Each crowdfunding site hosts open technology projects. These projects
+generate a profit for the developer(s), a commission for the site’s
 administrator and a tangible return for the individuals and the
 community (an economically viable alternative for all parties).</p>
 </div>
 <div class="paragraph">
 <p>The long-term goal of the KipOpen application is to provide a completely
 open alternative path for the design and development of consumer
-products. The general plan is to support every stage of the design
-cycle and subsequent manufacturing/production cycles, these stages
-define our project categories and include:</p>
+products. <strong>KipOpen incentivizes individual players (potentially from
+different countries) specializing in different market sectors to host
+crowdfunding sites specially tailored towards the problem of
+funding of open technologies in those sectors</strong>.
+For example in our future we would expect crowdfunding sites in
+multiple regions (and languages) specializing in any of the following
+categories:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -610,12 +648,12 @@ define our project categories and include:</p>
 <p>Software Development.</p>
 </li>
 <li>
-<p>Manufacturing and Retailing (pre-order based).</p>
+<p>Manufacturing and Retailing.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Through the use of a community investment platform designed solely for
+<p>Through the use of an investment platform designed solely for
 the development of open technology products, we aim to incentivize the
 use of public capital (i.e. from pools of informed consumers) to fund
 every stage of the design cycle. This is in contrast to the use of
@@ -626,9 +664,9 @@ tech products by uninformed or misled consumers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 This is a completely decentralized model (as opposed to
@@ -638,41 +676,25 @@ strategy to incentivize people to host marketplaces and consumers
 to trade on them.
 </td>
 </tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-The KipOpen application will act as a <strong>hub</strong>, i.e. project&#8217;s
-information will <strong>not</strong> be hosted on the site directly, we will try
-hard to keep the host servers lightweight. We will maximize the use of
-out-links and embedded links (e.g. gitHub/bitBucket for Repos,
-Youtube/Vimeo for videos &#8230;etc).
-</td>
-</tr>
-</table>
+</tbody></table>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_user_characteristics">User Characteristics</h2>
+<h2 id="_user_characteristics">3. User Characteristics</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The platform has three main kinds of users and there is a lot of
 overlap:</p>
 </div>
 <div class="sect2">
-<h3 id="_platform_administrator_host">Platform Administrator/Host</h3>
+<h3 id="_platform_administrator_host">3.1. Platform Administrator/Host</h3>
 <div class="paragraph">
 <p>The platform administrator is the individual that downloads the web
 application and installs it in its own <em>'average</em>' computer (e.g.
 it can be a spare low power net-book, or it can be an old server, a
-single board computer, a Game Boy - not really &#8230;etc.). This person
+single board computer, a Game Boy - not really …​etc.). This person
 then is in charge of maintaining his local marketplace application
 (i.e. hosting the site) so that other users (i.e. the developers
 and the investors) can use the marketplace to trade. In return for
@@ -687,10 +709,10 @@ computing device.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_technical_developers">Technical Developers</h3>
+<h3 id="_technical_developers">3.2. Technical Developers</h3>
 <div class="paragraph">
 <p>The technical developer goes to the platform because he has an
-interesting idea (the next open iphone &#8230; ok don’t laugh). He would
+interesting idea (the next open iphone …​ ok don’t laugh). He would
 like to receive capital to open his design, fund the development and
 make a return. Developers can also go to the platform to join the
 design team of a project for a financial return.</p>
@@ -705,16 +727,16 @@ meet the marketplace demand.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_informed_investors_aka_informed_consumers">Informed Investors (aka Informed Consumers)</h3>
+<h3 id="_informed_investors_aka_informed_consumers">3.3. Informed Investors (aka Informed Consumers)</h3>
 <div class="paragraph">
 <p>The <em>informed</em> consumer (note the emphasis on the word informed,
 this is not your typical “fashionable techie” consumer) goes to the
 platform with a clear technology need (e.g. an accounting suite
-or a new computer &#8230;etc). He browses the site, purchases
+or a new computer …​etc). He browses the site, purchases
 shares in relevant projects, proposes changes (add/remove features,
 finances or return incentives), votes on proposals and receives his
 return (e.g. his accounting software, computer hardware, technical support
-&#8230; etc).</p>
+…​ etc).</p>
 </div>
 <div class="paragraph">
 <p>Informed consumers trade directly with developers and can purchase open
@@ -728,7 +750,7 @@ technology simply because they get better value.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_user_operational_environment">User Operational Environment</h2>
+<h2 id="_user_operational_environment">4. User Operational Environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The administrator can interface with the marketplace application
@@ -744,18 +766,18 @@ application but it would be a nice option for high level users).</p>
 <div class="paragraph">
 <p>Other users (the developers and the investors) interface with the
 platform through the use of a browser (e.g. Mozilla Firefox, Google
-Chrome, Internet Explorer &#8230;etc).</p>
+Chrome, Internet Explorer …​etc).</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_cases">Use Cases</h2>
+<h2 id="_use_cases">5. Use Cases</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following are the typical use cases for our platform:</p>
 </div>
 <div class="sect2">
-<h3 id="_an_administrator_hosts_a_market_place">An Administrator Hosts a Market Place</h3>
+<h3 id="_an_administrator_hosts_a_market_place">5.1. An Administrator Hosts a Market Place</h3>
 <div class="paragraph">
 <p>A wise yet simple minded individual (e.g. he uses Linux you see),
 wants to install and maintain (host) an instance of the KipOpen
@@ -766,13 +788,13 @@ return while others can exchange designs and products on it.</p>
 <p>He proceeds to download the platform and install it in his
 computer, then he follows all of the easy steps to host a site
 (domain registration, allocation of a static IP, getting SSL
-certificate &#8230;etc) and contacts his local network of rich
+certificate …​etc) and contacts his local network of rich
 friends/acquaintances which start using the platform at once. Soon
 money starts rolling in (gonna need a couple of sacks).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_developer_creates_a_project">A Developer Creates a Project</h3>
+<h3 id="_a_developer_creates_a_project">5.2. A Developer Creates a Project</h3>
 <div class="paragraph">
 <p>A bright unemployed engineer (he is a bit cocky and has poor
 communication skills) comes with an idea to the marketplace, he
@@ -791,7 +813,7 @@ percent of ownership on the project).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_developer_joins_a_project">A Developer Joins a Project</h3>
+<h3 id="_a_developer_joins_a_project">5.3. A Developer Joins a Project</h3>
 <div class="paragraph">
 <p>A recent grad computer scientist is browsing through the platform
 to find a meaningful open project to work on (she quit her last job
@@ -802,13 +824,13 @@ design team of a project, work full time and earn a living.</p>
 <p>An ad-blocker project is currently seeking technical team
 members. She expresses interest and the creator of the project
 interviews her, they negotiate potential salary conditions if
-successfully funded. The programmer is added to the project&#8217;s
+successfully funded. The programmer is added to the project’s
 design team, the project is capitalized and the programmer starts
 working on the product.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_an_individual_investor_funds_a_project">An Individual Investor Funds a Project</h3>
+<h3 id="_an_individual_investor_funds_a_project">5.4. An Individual Investor Funds a Project</h3>
 <div class="paragraph">
 <p>An <em>informed</em> consumer (again note the use of the word
 <em>'informed</em>', not <em>marketing-prey</em> or <em>tv-misinformed</em>) is browsing
@@ -832,7 +854,7 @@ preparation software (along with a new pair of boots).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_an_institutional_investor_funds_a_project">An Institutional Investor Funds a Project</h3>
+<h3 id="_an_institutional_investor_funds_a_project">5.5. An Institutional Investor Funds a Project</h3>
 <div class="paragraph">
 <p>A money-driven nice-looking engineering manager is browsing through
 the platform and finds an interesting project that could be
@@ -853,7 +875,7 @@ software, he receives a bonus and spends it on a new electric car.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_an_investor_creates_a_project">An Investor Creates a Project</h3>
+<h3 id="_an_investor_creates_a_project">5.6. An Investor Creates a Project</h3>
 <div class="paragraph">
 <p>An informed consumer (either an individual investor or an
 institutional investor) creates a project with specific user
@@ -874,7 +896,7 @@ fingerprint lock design is released for production.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_features_and_requirements">Features and Requirements</h2>
+<h2 id="_features_and_requirements">6. Features and Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following is a list of features required for the first
@@ -892,7 +914,7 @@ have to login through one marketplace.</p>
 </li>
 <li>
 <p>Project creation guidance (user docs, tech docs, team selection,
-financial plan, user manual wiki &#8230; etc.)</p>
+financial plan, user manual wiki …​ etc.)</p>
 </li>
 <li>
 <p>Support for project category tags (relevant to product
@@ -908,7 +930,7 @@ development).</p>
 <p>Project ownership, rewards and voting rights.</p>
 </li>
 <li>
-<p>Decentralized secure storage of all project&#8217;s info: so they are fully
+<p>Decentralized secure storage of all project’s info: so they are fully
 searchable from any marketplace in the network.</p>
 </li>
 <li>
@@ -924,7 +946,7 @@ accountability and transparency).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_postponed_removed_features">Postponed/Removed Features</h2>
+<h2 id="_postponed_removed_features">7. Postponed/Removed Features</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>These are the ideas that <strong>will not</strong> be implemented, they are
@@ -955,29 +977,29 @@ It will follow more of a black and white or gray-scale standard
 </div>
 </div>
 <div class="sect1">
-<h2 id="_visual_specification">Visual Specification</h2>
+<h2 id="_visual_specification">8. Visual Specification</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the screen by screen look of the application.</p>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Note that the Home, Login, About Us and FAQ buttons in our
 navigation header and footer are common to every page.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="admonitionblock important">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Important</div>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 The visual appearance of our wireframes should be taken only
@@ -986,10 +1008,10 @@ to what is technically simplest (lowest overhead) and possible
 (standard practice).
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="sect2">
-<h3 id="_home_page">Home Page</h3>
+<h3 id="_home_page">8.1. Home Page</h3>
 <div class="paragraph">
 <p>The home page is presented to people that access the marketplace
 site directly from the browser (e.g. by typing mymarketplace.com on
@@ -1018,10 +1040,10 @@ the underlying application (i.e. the Osohm marketplace software).</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_wireframe">Wireframe</h4>
+<h4 id="_wireframe">8.1.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/home_page/home_page_wireframe_desktop.svg" alt="Home Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/home_page/home_page_wireframe_desktop.svg" alt="Home Page Wireframe">
 </div>
 </div>
 <div class="dlist">
@@ -1036,7 +1058,7 @@ carrousel.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items">Actionable Items</h4>
+<h4 id="_actionable_items">8.1.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The general home page has the following actionable items:</p>
 </div>
@@ -1075,7 +1097,7 @@ carrousel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_login_registration_page">Login/Registration Page</h3>
+<h3 id="_login_registration_page">8.2. Login/Registration Page</h3>
 <div class="paragraph">
 <p>The Login page can be accessed directly through the browser url
 (e.g. marketplace.com/login register), or from the navigation bar at
@@ -1084,10 +1106,10 @@ register for an account if they don’t have one or login into their
 existent account (this is pretty self-explanatory right?).</p>
 </div>
 <div class="sect3">
-<h4 id="_wireframe_2">Wireframe</h4>
+<h4 id="_wireframe_2">8.2.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/login_page/login_page_wireframe_desktop.svg" alt="Login Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/login_page/login_page_wireframe_desktop.svg" alt="Login Page Wireframe">
 </div>
 </div>
 <div class="dlist">
@@ -1102,7 +1124,7 @@ wireframe below).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items_2">Actionable Items</h4>
+<h4 id="_actionable_items_2">8.2.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The login page has the following page specific items:</p>
 </div>
@@ -1130,7 +1152,7 @@ Account page.</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_about_us_page">About Us Page</h3>
+<h3 id="_about_us_page">8.3. About Us Page</h3>
 <div class="paragraph">
 <p>The About Us page can be accessed from the footer navigation bar or from
 a direct browser URL. The About Us page allows for all users to read crucial
@@ -1140,10 +1162,10 @@ quick Bio of themselves, so that everyone can know they are dealing with the
 best people.</p>
 </div>
 <div class="sect3">
-<h4 id="_wireframe_3">Wireframe</h4>
+<h4 id="_wireframe_3">8.3.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/about_us_page/about_us_page_wireframe_desktop.svg" alt="About Us Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/about_us_page/about_us_page_wireframe_desktop.svg" alt="About Us Page Wireframe">
 </div>
 </div>
 <div class="dlist">
@@ -1158,7 +1180,7 @@ column small-width presentation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items_3">Actionable Items</h4>
+<h4 id="_actionable_items_3">8.3.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The About Us page has one optional actionable item: the member can pro-
 vide a link to his blog/professional profile by providing a link in his/her
@@ -1167,7 +1189,7 @@ name.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_faq_page">FAQ Page</h3>
+<h3 id="_faq_page">8.4. FAQ Page</h3>
 <div class="paragraph">
 <p>The Frequently Asked Questions page can be accessed from the footer
 navigation bar or from a direct browser URL. The FAQ page allows users
@@ -1175,36 +1197,36 @@ to find solutions to common problems they might be having with the
 platform or general helpful information.</p>
 </div>
 <div class="sect3">
-<h4 id="_wireframe_4">Wireframe</h4>
+<h4 id="_wireframe_4">8.4.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/faq_page/faq_page_wireframe_desktop.svg" alt="FAQ Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/faq_page/faq_page_wireframe_desktop.svg" alt="FAQ Page Wireframe">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items_4">Actionable Items</h4>
+<h4 id="_actionable_items_4">8.4.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The FAQ page questions are all collapsible and can be expanded by the user
 clicking on each question. Only one answer will be expanded at a time.</p>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 The collapsible sections will be implemented with simple
 html/css static functionality.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_search_page">Search Page</h3>
+<h3 id="_search_page">8.5. Search Page</h3>
 <div class="paragraph">
 <p>The Search page can be accessed from the home page (search button), from
 the common search button in any page and from a direct browser URL.</p>
@@ -1225,10 +1247,10 @@ users find interesting projects.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_wireframe_5">Wireframe</h4>
+<h4 id="_wireframe_5">8.5.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/search_page/search_page_wireframe_desktop.svg" alt="Search Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/search_page/search_page_wireframe_desktop.svg" alt="Search Page Wireframe">
 </div>
 </div>
 <div class="dlist">
@@ -1242,7 +1264,7 @@ column layout (this is standard practice).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items_5">Actionable Items</h4>
+<h4 id="_actionable_items_5">8.5.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The search page has the following page specific items:</p>
 </div>
@@ -1255,7 +1277,7 @@ query.</p>
 </li>
 <li>
 <p><em><strong>Categories Tags("Categories Drop Down Menu")</strong></em></p>
-<p>Used to select the category (e.g. hardware, software, firmware &#8230;etc)
+<p>Used to select the category (e.g. hardware, software, firmware …​etc)
 to filter projects by.</p>
 </li>
 <li>
@@ -1263,7 +1285,7 @@ to filter projects by.</p>
 <p>Used to sort by alphabetical order.</p>
 </li>
 <li>
-<p><em><strong>I-note, moreZ, openHardy, Tus Botas &#8230; ("Project Name hyperlink")</strong></em></p>
+<p><em><strong>I-note, moreZ, openHardy, Tus Botas …​ ("Project Name hyperlink")</strong></em></p>
 <p>Used to go to the respective project page.</p>
 </li>
 <li>
@@ -1279,7 +1301,7 @@ to filter projects by.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_edit_page">Create/Edit Page</h3>
+<h3 id="_create_edit_page">8.6. Create/Edit Page</h3>
 <div class="paragraph">
 <p>The create page can be accessed directly from the home page (create
 button), from the common create button in the navigation bar or from
@@ -1291,22 +1313,22 @@ filling in or updating all of the required information for any project.</p>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 The content of this page is only displayed to logged-in users, other
 users are redirected to the login page and displayed a page message.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="sect3">
-<h4 id="_wireframe_6">Wireframe</h4>
+<h4 id="_wireframe_6">8.6.1. Wireframe</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../wireframes/create_edit_page/create_edit_page_wireframe_desktop.svg" alt="Create/Edit Page Wireframe">
+<img src="/media/camilo/main_storage/workspaces/osohm/kipopen/documentation/user_documentation/wireframes/create_edit_page/create_edit_page_wireframe_desktop.svg" alt="Create/Edit Page Wireframe">
 </div>
 </div>
 <div class="dlist">
@@ -1321,7 +1343,7 @@ bottom of the screen will be broken up into a single column layout
 </div>
 </div>
 <div class="sect3">
-<h4 id="_actionable_items_6">Actionable Items</h4>
+<h4 id="_actionable_items_6">8.6.2. Actionable Items</h4>
 <div class="paragraph">
 <p>The Edit Project sections are all collapsible and can be expanded by
 the user clicking on each section. Only one section will be expanded at
@@ -1349,14 +1371,14 @@ computer.</p>
 <p>Project One Liner (Form): Short and descriptive (e.g. One device, lots of humans)</p>
 </li>
 <li>
-<p>Project Category (Choose Tags): Hardware, Firmware, Software, Manufacturing, Research &#8230;etc.</p>
+<p>Project Category (Choose Tags): Hardware, Firmware, Software, Manufacturing, Research …​etc.</p>
 </li>
 <li>
 <p>Description (Form): One paragraph description (e.g. We are building
-hardware that will make cloning possible in every household &#8230;)</p>
+hardware that will make cloning possible in every household …​)</p>
 </li>
 <li>
-<p>Licenses (Drop Down Menu): Choose a License (e.g. GPLv3, MIT &#8230;etc).</p>
+<p>Licenses (Drop Down Menu): Choose a License (e.g. GPLv3, MIT …​etc).</p>
 </li>
 <li>
 <p>Primary Contact (Form): Initially pre-populated field, can select other
@@ -1415,7 +1437,7 @@ and as the project evolves this will become a technical design document.</p>
 <p>The financial plan deals with costs, shares allocation, voting
 (1 share entitles you to voting participation, more shares, more
 voting power) and returns (hardware, levels of support, length of
-maintenance &#8230;etc)</p>
+maintenance …​etc)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1481,39 +1503,35 @@ published.</p>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 The collapsible sections will be implemented with simple
 html/css static functionality.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 <div class="admonitionblock note">
 <table>
-<tr>
+<tbody><tr>
 <td class="icon">
-<div class="title">Note</div>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 Every section will have instructions to guide the project creator
 incentivize good design principles and streamline the process.
 </td>
 </tr>
-</table>
+</tbody></table>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Last updated 2016-04-25 12:18:19 PDT
-</div>
-</div>
-</body>
-</html>
+        </div>
+      </div>
+    </body>
+  </html>

@@ -4,7 +4,7 @@ in general.*
 
 _While the collaborative development model of open projects can be
 sound, the economics of the system are weak. Today most open projects
-are largely funded by aggregate donations and/or corporate
+are largely funded by aggregate donations, and/or corporate
 sponsorships; this is not sustainable in the long term._
 
 ____
@@ -15,8 +15,8 @@ must make a living.
 ____
 
 The goal of the KipOpen project is to find alternative funding models
-that do not rely on donations but on tangible returns for consumers
-that can be used as incentives for them to invest on open technology.
+that do not rely on donations but on tangible returns for consumers;
+incentives for them to invest on open technology.
 
 *We don't claim to have a solution that solves the funding problem for
 every sector of technology; this would be naive.* The funding problem
@@ -25,5 +25,5 @@ individuals specializing in those sectors (e.g. it would be futile for
 a hardware engineer to expect to solve the problem for open academic
 research).
 
-KipOpen is simply a tool that incentivizes individuals from different
-technology sectors to find appropriate solutions.
+KipOpen is simply a platform that incentivizes individuals from
+different technology sectors to find appropriate solutions.
