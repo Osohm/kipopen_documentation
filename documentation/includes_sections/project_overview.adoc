@@ -1,0 +1,7 @@
+== Project Overview
+
+NOTE: This content is included in the home page, skip as needed.
+
+include::the_problem.adoc[leveloffset=+1]
+
+include::kipopen_description.adoc[leveloffset=+1]

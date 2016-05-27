@@ -1,0 +1,29 @@
+== Features and Requirements
+
+[TIP]
+.Discuss and contribute
+====
+Use https://github.com/Osohm/kipopen_website/issues/3[Issue 3] to discuss
+this section. Your contributions make a difference, no contribution is
+too small.
+====
+
+The following is a list of features required for the first
+development cycle:
+
+. *Support for a decentralized database system* (blockchain based ...etc)
+. *Decentralized storage* (i.e. the schema) of:
+    - User credentials
+    - Crowdfunding sites reviews
+    - Project's information
+    - Project's Reviews (accountability and transparency)
+    - Developer Reviews (accountability and transparency)
+. *Support for pluggable architecture* to support extra functionality/plugins
+. *Support for crowdfunding categories plugins* (Hardware, software ...etc)
+. *Support for payment plugins* (Bitcoin, Stripe, Paypal, Amazon payments ...etc)
+. *Support for project category tags*
+. *Project Search functionality* (local and remote search results)
+. *Support for project messaging board*
+. *Support for project ownership and team selection*
+. *Support for multiple return incentives* (Voting rights, support
+    packages, material units ...etc)

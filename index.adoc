@@ -1,34 +1,23 @@
 = KipOpen
-The KipOpen Team  <camilo.tejeiro@gmail.com>
-:Date:          {docdate}
-:Revision:      0.1
+The KipOpen Team <https://github.com/Osohm[@Osohm]>
+:description: KipOpen Website and documentation. A decentralized +
+investment platform for open technology.
+:keywords: KipOpen, Open Technology, Open Software, Open Hardware, +
+Open Source, Crowdsourcing, Crowdfunding, Decentralized, Investment
 :toc:
 :sectnums:
-
-:user_functional_specification: user_documentation/user_functional_specification/user_functional_specification.html
-:project_mission: project_mission.adoc
-:kipopen_description: kipopen_description.adoc
-:kipopen_instances_diagram: diagrams/kipopen_instances.svg
-:the_problem: the_problem.adoc
-
+:icons: font
+:imagesdir: images
+:includes: documentation/includes_sections
+:doc_attributes: true
 
 _A decentralized investment platform for open technology_
 
-== The Problem
+include::{includes}/the_problem.adoc[]
 
-include::{the_problem}[]
-
-== What is KipOpen?
-
-include::{kipopen_description}[]
-
-image::{kipopen_instances_diagram}[KipOpen Sites (Instances)]
-
-TIP: The black circles represent the KipOpen sites or instances. Peer
-to peer communication between sites is represented with the black
-arrows. Users are represented by the gray circles and gray arrows.
+include::{includes}/kipopen_description.adoc[]
 
 == Supporting Documentation
 
-* link:{user_functional_specification}[User Functional Specification]
+* link:documentation/user_functional_specification.html[User Functional Specification]
 * Technical Design Specification (TBD)

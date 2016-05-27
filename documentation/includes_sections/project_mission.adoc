@@ -1,0 +1,11 @@
+== Project Mission
+
+Our mission is to provide a viable economic path for
+the design and commercialization of open technologies.
+
+Our overall aim is to shift the current economics of the
+system to a demand-sided model by directly connecting
+informed consumers with technical developers.
+
+_Given the right economics, we see a future where
+open is the de-facto standard for consumer products_

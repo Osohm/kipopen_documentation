@@ -1,5 +1,0 @@
-= User Design Questions
-
-NOTE: Every question added here must be addressed by the user functional
-spec (add it as an issue and assigned to a responsible party) or
-remove it from this file if deemed unnecessary.

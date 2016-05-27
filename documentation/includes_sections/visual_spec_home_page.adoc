@@ -1,0 +1,58 @@
+// define doc attributes if not defined in master document
+ifndef::doc_attributes[]
+:imagesdir: ../../images
+:includes: ./
+endif::[]
+
+== Home Page
+
+The home page is presented to people that access the marketplace
+site directly from the browser (e.g. by typing mymarketplace.com on
+your browser), it is the point of access for every general user.
+
+The The home page has the following main purposes:
+
+* To get people to create new open technology projects.
+
+* To get informed consumers to search for projects on the marketplace
+    and invest.
+
+* To allow people to login (or sign-up) to their account and manage
+    their projects or investments.
+
+* To allow anyone to get information about the specific marketplace and
+    the underlying application (i.e. the Osohm marketplace software).
+
+=== Wireframe
+
+image::wireframes/home_page/home_page_wireframe_desktop.svg[Home Page Wireframe]
+
+For Mobile Devices:: The mobile device will have a collapsible header
+menu (keeping with mobile standards) and it will not have the projects
+carrousel.
+
+=== Actionable Items
+
+The general home page has the following actionable items:
+
+[qanda]
+*MARKETPLACE("Home button")*::
+    Used to direct the user to the marketplace _Home page_.
+
+*LOGIN ("Login button")*::
+    Used to direct the user to the _Login/Registration_ page.
+
+*CREATE ("Create Button")*::
+    Used to direct the user to the _Project Creation_ page.
+
+*SEARCH ("Search Button")*::
+    Used to direct the user to the _Projects Search_ page.
+
+*CARROUSEL ("Latest Open Projects")*::
+    Used to direct the user to the latest relevant open projects.
+
+*ABOUT US ("About Us Button")*::
+    Used to direct the user to the _About Us_ page.
+
+*FAQ ("FAQ Button")*::
+    Used to direct the user to the _Frequently Asked Questions_ page.

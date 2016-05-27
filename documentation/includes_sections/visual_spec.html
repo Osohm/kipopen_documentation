@@ -4,9 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="Asciidoctor 0.1.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="KipOpen Website and documentation. A decentralized investment platform for open technology.">
-<meta name="keywords" content="KipOpen, Open Technology, Open Software, Open Hardware, Open Source, Crowdsourcing, Crowdfunding, Decentralized, Investment">
-<title>KipOpen</title>
+<title>Visual Specification</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
@@ -361,214 +359,573 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] { cursor: default; }
 .literalblock > .content > pre, .listingblock > .content > pre { -webkit-border-radius: 0; border-radius: 0; }
 
 </style>
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>KipOpen</h1>
-<span id="author" class="author">The KipOpen Team</span><br>
-<span id="email" class="email"><a href="https://github.com/Osohm">@Osohm</a></span><br>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_the_problem">The Problem</a></li>
-<li><a href="#_what_is_kipopen">What is KipOpen?</a></li>
-<li>
-<ul class="sectlevel2">
-<li><a href="#_a_web_application">A web application</a></li>
-<li><a href="#_a_decentralized_network">A decentralized network</a></li>
-</ul>
-</li>
-<li><a href="#_supporting_documentation">Supporting Documentation</a></li>
-</ul>
-</div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><em>A decentralized investment platform for open technology</em></p>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="_the_problem">The Problem</h2>
+<h2 id="_visual_specification">Visual Specification</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><strong>The lack of sustainable sources of capital for open projects and Open
-Intellectual Property (<a href="https://osohm.org/faq/#what-is-open-intellectual-property">OIP</a>)
-in general.</strong></p>
-</div>
-<div class="paragraph">
-<p><em>While the collaborative development model of open projects can be
-sound, the economics of the system are weak. Today most open projects
-are largely funded by aggregate donations, and/or corporate
-sponsorships; this is not sustainable in the long term.</em></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>For widespread adoption of open technology in the consumer market
-(not only in niche markets): informed consumers must understand the
-value (and the cost) of open technology and engineers and developers
-must make a living.</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>The goal of the KipOpen project is to find alternative funding models
-that do not rely on donations but on tangible returns for consumers;
-incentives for them to invest on open technology.</p>
-</div>
-<div class="paragraph">
-<p><strong>We don&#8217;t claim to have a solution that solves the funding problem for
-every sector of technology; this would be naive.</strong> The funding problem
-looks different for every sector and must be tackled by passionate
-individuals specializing in those sectors (e.g. it would be futile for
-a hardware engineer to expect to solve the problem for open academic
-research).</p>
-</div>
-<div class="paragraph">
-<p>KipOpen is simply a platform that incentivizes individuals from
-different technology sectors to find appropriate solutions.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_what_is_kipopen">What is KipOpen?</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_a_web_application">A web application</h3>
-<div class="paragraph">
-<p>KipOpen is a <strong>self-hosted web application</strong>. Anyone can download and
-install KipOpen in their own computer to host a crowdfunding site.</p>
-</div>
-<div class="paragraph">
-<p>The application comes with the minimal core functionality required to
-operate in small computing devices (e.g. single board computers) and
-it has a pluggable architecture to support the addition of extra
-functionality (e.g. research category plugin, hardware category plugin,
-Bitcoin payments plugin, Facebook/Twitter integration plugin, French
-language plugin &#8230;etc).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_a_decentralized_network">A decentralized network</h3>
-<div class="paragraph">
-<p>Each individual crowdfunding site is part of a <strong>decentralized network</strong>
-of KipOpen web applications. Peer to peer communication and a
-distributed database allows every crowdfunding site to share important
-information with each other (e.g. project/developer reviews, user
-credentials, projects information &#8230;etc).</p>
-</div>
-<div class="paragraph">
-<p><a href="documentation/includes_sections/why_decentralized.html">Why do we need a decentralized network?</a></p>
-</div>
-<div class="paragraph">
-<p>The following is a simplified diagram of the network architecture: A new
-user sees KipOpen as a large crowdfunding platform. But It accesses the
-network through particular crowdfunding sites that communicate among
-themselves (i.e. network nodes).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/diagrams/kipopen_instances.svg" alt="KipOpen Sites (Instances)">
-</div>
-</div>
-<div class="admonitionblock tip">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="icon-tip" title="Tip"></i>
+<div class="title">Important</div>
 </td>
 <td class="content">
-The grey circles represent KipOpen crowdfunding sites.
-Peer to peer communication between sites is represented with the black
-arrows. Users/Investors are represented by the white circles and gray
-arrows.
+<div class="title">This section is outdated!</div>
+<div class="paragraph">
+<p>use <a href="https://github.com/Osohm/kipopen_website/issues/5">Issue 5</a> to discuss
+and help improve this section. Your contributions make a difference,
+no contribution is too small.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Each crowdfunding site hosts open technology projects. These projects
-generate a profit for the developer(s), a commission for the site&#8217;s
-administrator and a tangible return for the individuals and the
-community (an economically viable alternative for all parties).
-<a href="documentation/includes_sections/competitive_advantage.html">Read more about KipOpen Competitive
-advantage.</a></p>
+<p>The visual appearance of our wireframes should be taken only as a reference,
+meaning the implementation of every page should adhere to what is
+technically simplest (lowest overhead) and possible (standard practice).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_home_page">Home Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The home page is presented to people that access the marketplace
+site directly from the browser (e.g. by typing mymarketplace.com on
+your browser), it is the point of access for every general user.</p>
 </div>
 <div class="paragraph">
-<p>The long-term goal of the KipOpen application is to provide a completely
-open alternative path for the design and development of consumer
-products. <strong>KipOpen incentivizes individual players (potentially from
-different countries) specializing in different market sectors to host
-crowdfunding sites specially tailored towards the problem of
-funding of open technologies in those sectors</strong>.
-For example in our future we would expect crowdfunding sites in
-multiple regions (and languages) specializing in any of the following
-categories:</p>
+<p>The The home page has the following main purposes:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Technology Research.</p>
+<p>To get people to create new open technology projects.</p>
 </li>
 <li>
-<p>Hardware Design.</p>
+<p>To get informed consumers to search for projects on the marketplace
+and invest.</p>
 </li>
 <li>
-<p>Firmware Development.</p>
+<p>To allow people to login (or sign-up) to their account and manage
+their projects or investments.</p>
 </li>
 <li>
-<p>Mechanical Design.</p>
-</li>
-<li>
-<p>Industrial Design.</p>
-</li>
-<li>
-<p>Software Development.</p>
-</li>
-<li>
-<p>Manufacturing and Retailing.</p>
+<p>To allow anyone to get information about the specific marketplace and
+the underlying application (i.e. the Osohm marketplace software).</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Through the use of an investment platform designed solely for
-the development of open technology products, we aim to incentivize the
-use of public capital (i.e. from pools of informed consumers) to fund
-every stage of the design cycle. This is in contrast to the use of
-private venture capital for funding the development of
-closed/proprietary technology (which is our current standard) and the
-use of popular crowdsourcing sites for funding flashy proprietary
-tech products by uninformed or misled consumers.</p>
+<div class="sect2">
+<h3 id="_wireframe">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/home_page/home_page_wireframe_desktop.svg" alt="Home Page Wireframe">
 </div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">For Mobile Devices</dt>
+<dd>
+<p>The mobile device will have a collapsible header
+menu (keeping with mobile standards) and it will not have the projects
+carrousel.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items">Actionable Items</h3>
 <div class="paragraph">
-<p><a href="documentation/includes_sections/project_mission.html">Read more about the mission of the KipOpen project</a></p>
+<p>The general home page has the following actionable items:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em><strong>MARKETPLACE("Home button")</strong></em></p>
+<p>Used to direct the user to the marketplace <em>Home page</em>.</p>
+</li>
+<li>
+<p><em><strong>LOGIN ("Login button")</strong></em></p>
+<p>Used to direct the user to the <em>Login/Registration</em> page.</p>
+</li>
+<li>
+<p><em><strong>CREATE ("Create Button")</strong></em></p>
+<p>Used to direct the user to the <em>Project Creation</em> page.</p>
+</li>
+<li>
+<p><em><strong>SEARCH ("Search Button")</strong></em></p>
+<p>Used to direct the user to the <em>Projects Search</em> page.</p>
+</li>
+<li>
+<p><em><strong>CARROUSEL ("Latest Open Projects")</strong></em></p>
+<p>Used to direct the user to the latest relevant open projects.</p>
+</li>
+<li>
+<p><em><strong>ABOUT US ("About Us Button")</strong></em></p>
+<p>Used to direct the user to the <em>About Us</em> page.</p>
+</li>
+<li>
+<p><em><strong>FAQ ("FAQ Button")</strong></em></p>
+<p>Used to direct the user to the <em>Frequently Asked Questions</em> page.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_supporting_documentation">Supporting Documentation</h2>
+<h2 id="_login_registration_page">Login/Registration Page</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The Login page can be accessed directly through the browser url
+(e.g. marketplace.com/login register), or from the navigation bar at
+the top of any page. The login/registration page allows people to
+register for an account if they don’t have one or login into their
+existent account (this is pretty self-explanatory right?).</p>
+</div>
+<div class="sect2">
+<h3 id="_wireframe_2">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/login_page/login_page_wireframe_desktop.svg" alt="Login Page Wireframe">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">For mobile devices</dt>
+<dd>
+<p>The layout for the mobile device login page is
+simply the inner login window inside the desktop layout (see desktop
+wireframe below).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items_2">Actionable Items</h3>
+<div class="paragraph">
+<p>The login page has the following page specific items:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em><strong>LOGIN("Login Button")</strong></em></p>
+<p>Used to confirm the user credentials and redirect users to the <em>User
+Account page.</em></p>
+</li>
+<li>
+<p><em><strong>Stay Signed In ("Stay signed in Check-box")</strong></em></p>
+<p>Used to save the user session upon login.</p>
+</li>
+<li>
+<p><em><strong>Forgot your password("Forgot your password Link")</strong></em></p>
+<p>Used to direct the user to the <em>Password Recovery</em> page.</p>
+</li>
+<li>
+<p><em><strong>Register here ("Register here Link")</strong></em></p>
+<p>Used to direct the user to the <em>User Registration</em> page.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_about_us_page">About Us Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The About Us page can be accessed from the footer navigation bar or from
+a direct browser URL. The About Us page allows for all users to read crucial
+information about the marketplace (e.g. the physical location, contact e-mail
+and (perhaps) phone number). It also allows the site members to provide a
+quick Bio of themselves, so that everyone can know they are dealing with the
+best people.</p>
+</div>
+<div class="sect2">
+<h3 id="_wireframe_3">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/about_us_page/about_us_page_wireframe_desktop.svg" alt="About Us Page Wireframe">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">For mobile devices</dt>
+<dd>
+<p>The layout for the mobile device about us page
+will have the pictures scaled and placed below the text to fit a one
+column small-width presentation.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items_3">Actionable Items</h3>
+<div class="paragraph">
+<p>The About Us page has one optional actionable item: the member can pro-
+vide a link to his blog/professional profile by providing a link in his/her
+name.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_faq_page">FAQ Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Frequently Asked Questions page can be accessed from the footer
+navigation bar or from a direct browser URL. The FAQ page allows users
+to find solutions to common problems they might be having with the
+platform or general helpful information.</p>
+</div>
+<div class="sect2">
+<h3 id="_wireframe_4">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/faq_page/faq_page_wireframe_desktop.svg" alt="FAQ Page Wireframe">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items_4">Actionable Items</h3>
+<div class="paragraph">
+<p>The FAQ page questions are all collapsible and can be expanded by the user
+clicking on each question. Only one answer will be expanded at a time.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The collapsible sections will be implemented with simple
+html/css static functionality.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_search_page">Search Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Search page can be accessed from the home page (search button), from
+the common search button in any page and from a direct browser URL.</p>
+</div>
+<div class="paragraph">
+<p>The Search page allows for users to search for projects existent on the
+platform.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="documentation/user_functional_specification.html">User Functional Specification</a></p>
+<p>Prior to search query: It displays a list with the latest projects.</p>
 </li>
 <li>
-<p>Technical Design Specification (TBD)</p>
+<p>Upon search query: It provides relevant or similar results to help
+users find interesting projects.</p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="_wireframe_5">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/search_page/search_page_wireframe_desktop.svg" alt="Search Page Wireframe">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">For Mobile Devices</dt>
+<dd>
+<p>The multi-column table will be broken into a single
+column layout (this is standard practice).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items_5">Actionable Items</h3>
+<div class="paragraph">
+<p>The search page has the following page specific items:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em><strong>Search Phrase ("Search Phrase Text Box and Icon/Button")</strong></em></p>
+<p>Used can fill the form and click this button to submit the search
+query.</p>
+</li>
+<li>
+<p><em><strong>Categories Tags("Categories Drop Down Menu")</strong></em></p>
+<p>Used to select the category (e.g. hardware, software, firmware &#8230;etc)
+to filter projects by.</p>
+</li>
+<li>
+<p><em><strong>Project Name ("Project Name Sort Button")</strong></em></p>
+<p>Used to sort by alphabetical order.</p>
+</li>
+<li>
+<p><em><strong>I-note, moreZ, openHardy, Tus Botas &#8230; ("Project Name hyperlink")</strong></em></p>
+<p>Used to go to the respective project page.</p>
+</li>
+<li>
+<p><em><strong>Category Tags ("Category Tags Sort Button")</strong></em></p>
+<p>Used to sort by alphabetical order.</p>
+</li>
+<li>
+<p><em><strong>Status ("Status Sort Button")</strong></em></p>
+<p>Used to sort projects by their current development status.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_edit_page">Create/Edit Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The create page can be accessed directly from the home page (create
+button), from the common create button in the navigation bar or from
+a direct browser URL.</p>
+</div>
+<div class="paragraph">
+<p>It allows users (developers and consumers) to create projects, by
+filling in or updating all of the required information for any project.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The content of this page is only displayed to logged-in users, other
+users are redirected to the login page and displayed a page message.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_wireframe_6">Wireframe</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../../images/wireframes/create_edit_page/create_edit_page_wireframe_desktop.svg" alt="Create/Edit Page Wireframe">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">For Mobile Devices</dt>
+<dd>
+<p>The multi-column layout of the buttons at the
+bottom of the screen will be broken up into a single column layout
+(this is pretty standard).</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actionable_items_6">Actionable Items</h3>
+<div class="paragraph">
+<p>The Edit Project sections are all collapsible and can be expanded by
+the user clicking on each section. Only one section will be expanded at
+a time.</p>
+</div>
+<div class="paragraph">
+<p>The Create/Edit page has the following collapsible sections:</p>
+</div>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em><strong>Project Basics ("Project Basics Collapsible Section")</strong></em></p>
+<p>The project basics collapsible section will have the following fillable
+forms:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project Name (Form): Choose something meaningful (e.g. HumanClone).</p>
+</li>
+<li>
+<p>Project Logo- Optional (Input field): Choose an .svg from your
+computer.</p>
+</li>
+<li>
+<p>Project One Liner (Form): Short and descriptive (e.g. One device, lots of humans)</p>
+</li>
+<li>
+<p>Project Category (Choose Tags): Hardware, Firmware, Software, Manufacturing, Research &#8230;etc.</p>
+</li>
+<li>
+<p>Description (Form): One paragraph description (e.g. We are building
+hardware that will make cloning possible in every household &#8230;)</p>
+</li>
+<li>
+<p>Licenses (Drop Down Menu): Choose a License (e.g. GPLv3, MIT &#8230;etc).</p>
+</li>
+<li>
+<p>Primary Contact (Form): Initially pre-populated field, can select other
+registered marketplace users (e.g. to transfer ownership).</p>
+</li>
+<li>
+<p>Location (Form): Physical location of project. City and country
+available to public, address available to investors after funding.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>Features and Requirements ("Features and Requirements Collapsible Section")</strong></em></p>
+<p>This will be the user requirements document or functional spec doc.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>User Documentation (one or more URL entry fields).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>Technical Team ("Technical Team Collapsible Section")</strong></em></p>
+<p>This section will allow the owner of the project to add registered
+team members to the project.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project Owner display field (can not edit)</p>
+</li>
+<li>
+<p>Technical Team Names (text entry field)</p>
+</li>
+<li>
+<p>Add more members (button).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>Technical Documentation ("Technical Documentation Collapsible Section")</strong></em></p>
+<p>This will be the design specification: Starts as technical specifications
+and as the project evolves this will become a technical design document.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Technical Documentation (one or more URL entry field).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>Financial Plan ("Financial Plan Collapsible Section")</strong></em></p>
+<p>The financial plan deals with costs, shares allocation, voting
+(1 share entitles you to voting participation, more shares, more
+voting power) and returns (hardware, levels of support, length of
+maintenance &#8230;etc)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Costs breakdown (form).</p>
+</li>
+<li>
+<p>Issue shares and price per share (form).</p>
+</li>
+<li>
+<p>Return packages (form).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>User Manual ("User Manual Collapsible Section")</strong></em></p>
+<p>This section will allow the owner of the project to publish a user
+manual/tutorial wiki for the public to use and edit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>User Manual Wiki (URL entry field).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><strong>Public Message ("Public Message Entry Field")</strong></em></p>
+<p>The owner can use this form to provide short public updates about the
+project (they will show up in the search results.)</p>
+</li>
+<li>
+<p><em><strong>Save Project ("Save Project Button")</strong></em></p>
+<p>The owner can use this button to update the project information.</p>
+</li>
+<li>
+<p><em><strong>Preview Page ("Preview Page Button)</strong></em></p>
+<p>The owner can use this button to preview the project changes he/she made.</p>
+</li>
+<li>
+<p><em><strong>Preview Page ("Open to the Pubic Button)</strong></em></p>
+<p>This button is dynamic. Depending on the current status of the project
+it can have the following values.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Open to the public: Anyone can see the project page (this is normally
+done after filling the features and requirements section).</p>
+</li>
+<li>
+<p>Launch for investment: This button becomes available after the project
+is public and the team, technical documentation and financial plan
+sections are completed.</p>
+</li>
+<li>
+<p>Finish Project: This is normally done after a user manual has been
+published.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The collapsible sections will be implemented with simple
+html/css static functionality.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Every section will have instructions to guide the project creator,
+incentivize good design principles and streamline the process.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 11:06:45 PDT
+Last updated 2016-05-27 16:30:51 PDT
 </div>
 </div>
 </body>

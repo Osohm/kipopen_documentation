@@ -1,0 +1,75 @@
+// define doc attributes if not defined in master document
+ifndef::doc_attributes[]
+:imagesdir: ../../images
+:includes: ./
+endif::[]
+
+== What is KipOpen?
+
+=== A web application
+KipOpen is a **self-hosted web application**. Anyone can download and
+install KipOpen in their own computer to host a crowdfunding site.
+
+The application comes with the minimal core functionality required to
+operate in small computing devices (e.g. single board computers) and
+it has a pluggable architecture to support the addition of extra
+functionality (e.g. research category plugin, hardware category plugin,
+Bitcoin payments plugin, Facebook/Twitter integration plugin, French
+language plugin ...etc).
+
+=== A decentralized network
+Each individual crowdfunding site is part of a **decentralized network**
+of KipOpen web applications. Peer to peer communication and a
+distributed database allows every crowdfunding site to share important
+information with each other (e.g. project/developer reviews, user
+credentials, projects information ...etc).
+
+link:{includes}/why_decentralized.html[Why do we need a decentralized network?]
+
+The following is a simplified diagram of the network architecture: A new
+user sees KipOpen as a large crowdfunding platform. But It accesses the
+network through particular crowdfunding sites that communicate among
+themselves (i.e. network nodes).
+
+image::diagrams/kipopen_instances.svg[KipOpen Sites (Instances)]
+
+TIP: The grey circles represent KipOpen crowdfunding sites.
+Peer to peer communication between sites is represented with the black
+arrows. Users/Investors are represented by the white circles and gray
+arrows.
+
+Each crowdfunding site hosts open technology projects. These projects
+generate a profit for the developer(s), a commission for the site's
+administrator and a tangible return for the individuals and the
+community (an economically viable alternative for all parties).
+link:{includes}/competitive_advantage.html[Read more about KipOpen Competitive
+advantage.]
+
+The long-term goal of the KipOpen application is to provide a completely
+open alternative path for the design and development of consumer
+products. *KipOpen incentivizes individual players (potentially from
+different countries) specializing in different market sectors to host
+crowdfunding sites specially tailored towards the problem of
+funding of open technologies in those sectors*.
+For example in our future we would expect crowdfunding sites in
+multiple regions (and languages) specializing in any of the following
+categories:
+
+* Technology Research.
+* Hardware Design.
+* Firmware Development.
+* Mechanical Design.
+* Industrial Design.
+* Software Development.
+* Manufacturing and Retailing.
+
+Through the use of an investment platform designed solely for
+the development of open technology products, we aim to incentivize the
+use of public capital (i.e. from pools of informed consumers) to fund
+every stage of the design cycle. This is in contrast to the use of
+private venture capital for funding the development of
+closed/proprietary technology (which is our current standard) and the
+use of popular crowdsourcing sites for funding flashy proprietary
+tech products by uninformed or misled consumers.
+
+link:{includes}/project_mission.html[Read more about the mission of the KipOpen project]

@@ -1,0 +1,54 @@
+= User Functional Specification
+The KipOpen Team <https://github.com/Osohm[@Osohm]>
+:description: KipOpen Website and documentation. A decentralized +
+investment platform for open technology.
+:keywords: KipOpen, Open Technology, Open Software, Open Hardware, +
+Open Source, Crowdsourcing, Crowdfunding, Decentralized, Investment
+:toc:
+:sectnums:
+:icons: font
+:imagesdir: ../images
+:includes: includes_sections
+:doc_attributes: true
+
+[NOTE]
+.This document is under active development!
+====
+Use https://github.com/Osohm/kipopen_website/issues/4[Issue 4] to
+discuss this document.
+Bear in mind, this is a really rough draft that we will use as our
+starting point. As we move forward, this document will take shape and
+assume a more polished look.
+====
+
+[IMPORTANT]
+.This document *must not* be dry and boring!
+====
+Keep this document entertaining (e.g. use humor) so that
+people actually want to read it and it gets maintained, otherwise this
+document will be useless.
+====
+
+// Introduction
+include::{includes}/introduction.adoc[]
+
+// Project Overview
+include::{includes}/project_overview.adoc[]
+
+// User Characteristics
+include::{includes}/user_characteristics.adoc[]
+
+// Operational Environment
+include::{includes}/operational_environment.adoc[]
+
+// Use Cases
+include::{includes}/use_cases.adoc[]
+
+// Features and Requirements
+include::{includes}/features_requirements.adoc[]
+
+// Postponed/Removed Features
+include::{includes}/postponed_removed_features.adoc[]
+
+// Visual Specification
+include::{includes}/visual_spec.adoc[]

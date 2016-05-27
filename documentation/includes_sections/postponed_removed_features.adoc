@@ -1,0 +1,15 @@
+== Postponed/Removed Features
+
+[TIP]
+.Discuss and contribute
+====
+Use https://github.com/Osohm/kipopen_website/issues/3[Issue 3] to discuss
+this section. Your contributions make a difference, no contribution is
+too small.
+====
+
+These are the ideas that *will not* be implemented.
+They are too *bold*, too *outside the box*, so they belong **outside**
+of the application, maybe for the next release cycle (evil laugh).
+keep increasing this list continuously (i.e. simplifying the
+application to the bone) so that we can meet our release cycles.

@@ -1,0 +1,22 @@
+== Why decentralized?
+
+A decentralized network is crucial:
+
+* It allows consumers/investors to use and see
+KipOpen as a _single investment platform_ (e.g. they only need to login
+once and they can search for any project in the network easily).
+*This is necessary to facilitate user adoption.*
+
+* It distributes the cost and maintenance of the network over all the
+individual crowdfunding sites (i.e. the network nodes).
+*This secures the long-term sustainability of the platform.*
+
+* It incentivizes the creation of new crowdfunding sites. Every new
+site benefits from being part of the network (e.g. access to
+existent users, inclusion in global search results, publicity ...etc)
+and faces lower barriers to entry. *This fuels the growth of the network.*
+
+.But most importantly
+A decentralized architecture allows the KipOpen platform to grow and
+become a self-sustained independent entity. KipOpen can live on
+irrelevant of the fate of any particular backing organization.

@@ -1,0 +1,30 @@
+== User Operational Environment
+
+All users initially install the client web application. All major
+operating systems are supported (GNU/Linux, MAC, Windows).
+To become an administrator user (i.e. to host a crowdfunding site) you
+need to install extra plugins/libraries (e.g. hardware crowdfunding,
+software crowdfunding ...etc, Bitcoing Payments ...etc)
+
+All users can interface with the web application through a:
+
+Command Line Interface (i.e. terminal/shell interface)::
+* Comprehensive support for all tasks.
+* Shipped as part of the core application.
+
+Graphical user interface::
+* Support for common tasks (graphical wrapper around shell commands)
+* Supported through external plugins/libraries).
+* Bundled with the client application.
+
+User API::
+* Considered for future release.
+
+In the future other client applications (points of entry to the network)
+can be written to facilitate adoption, for example:
+
+* Android client app.
+* iOS App
+* Browser add-ons/extensions
+* External plugins to support HTTP access to the crowdfunding sites. (So
+that users can visit sites directly through their browsers).
