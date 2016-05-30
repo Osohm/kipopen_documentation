@@ -1,1 +1,23 @@
-include::index.adoc[]
+= KipOpen
+The KipOpen Team <https://github.com/Osohm[@Osohm]>
+:description: KipOpen Website and documentation. A decentralized +
+investment platform for open technology.
+:keywords: KipOpen, Open Technology, Open Software, Open Hardware, +
+Open Source, Crowdsourcing, Crowdfunding, Decentralized, Investment
+:toc:
+:sectnums:
+:icons: font
+:imagesdir: images
+:includes: documentation/includes_sections
+:doc_attributes: true
+
+_A decentralized investment platform for open technology_
+
+include::{includes}/the_problem.adoc[]
+
+include::{includes}/kipopen_description.adoc[]
+
+== Supporting Documentation
+
+* link:documentation/user_functional_specification.html[User Functional Specification]
+* Technical Design Specification (TBD)
